@@ -17,12 +17,12 @@
 # All other variants have option values and may have inventory units.
 # Sum of on_hand each variant's inventory level determine "on_hand" level for the product.
 #
-
+require 'elasticsearch/model'
 module Spree
   class Product < Spree::Base
     searchkick
-    #include Elasticsearch::Model
-    #include Elasticsearch::Model::Callbacks
+    include Elasticsearch::Model
+    include Elasticsearch::Model::Callbacks
 
     
 
