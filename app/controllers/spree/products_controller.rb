@@ -15,17 +15,15 @@ module Spree
 
       @query = params[:q].presence || "*"
       @products = Spree::Product.search(@query, fields: [:name, :machine_models], highlight: {fields: [:name]})
-    end
-
-
-    def search
-  if params[:search].present?
+      if params[:search].present?
     @products = Spree::Product.__elasticsearch__.search(params[:search]).records
   else
     @products = Spree::Product.all
   end
-end
+    end
 
+
+ 
 
     def show
 	  @imageProds = "http://ts.liveofficedata.co.uk/" + @product.image_url
