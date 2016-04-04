@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/elasticsearch/elasticsearch-rails.git
+  revision: a714d5931182501531d2ce6b767bcb3c97ce56a7
+  specs:
+    elasticsearch-model (0.1.8)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.8)
+
+GIT
   remote: git://github.com/spree-contrib/spree_mail_settings.git
   revision: 99af7e4a137ac76fe4e93b1c8e5a38d81583904c
   branch: 3-0-stable
@@ -439,6 +449,8 @@ DEPENDENCIES
   byebug
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.1.0)
+  elasticsearch-model!
+  elasticsearch-rails!
   fog (~> 1.24.0)
   font-awesome-rails
   jbuilder (~> 2.0)
