@@ -1,0 +1,57 @@
+<% @add = Spree::Product.find_by(name: "customer-address") %>
+
+<% if "spree/products" == params[:controller] && @taxon || !@taxonomies.empty? %>
+  <% content_for :sidebar do %>
+    <div data-hook="homepage_sidebar_navigation">
+      <% if "spree/products" == params[:controller] && @taxon %>
+        <%= render :partial => 'spree/shared/filters' %>
+      <% else %>
+        <%= render :partial => 'spree/shared/taxonomies' %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+
+<style>.red {font-weight: bold;color: red !important;}</style>
+
+
+<h2>You searched for <b>"<%= @query %>"</b></h2><br><br>
+
+<% if @products.empty? %>
+
+  <h3>Can't find what you're looking for? <br><br>Then call us on <b><%= @add.phone %></b> and email us on <b><a style="color:#333 !important" class="footer-mail" href="mailto:<%= @add.email %>?Subject=Sales" target="_top"><%= @add.email %></a></b></h3>
+
+<% else %>
+
+  <% @products.each do |product| %>
+    <div style="border: 1px groove #999; border-radius: 5px;" class="row">
+      <div class="col-md-3">
+          <%= image_tag('http://ts.liveofficedata.co.uk/' + product.image_url, class: 'target_image') %>
+      </div>
+
+      <div class="col-md-5">
+        <h3><%= link_to product.name.gsub(/(#{@query})/i, '<span class="red">\1</span>').html_safe, product %></h3>
+        <p>€<%= product.price %></p>
+      </div>
+      <div class="col-md-4">
+        <h3>Machine Fits</h3>
+        <p><%= product.machine_models.gsub(/(#{@query})/i, '<span class="red">\1</span>').html_safe %></p>
+      </div>
+    </div>
+    <div style="clear:both;height:30px;"></div>
+  <% end %>
+
+<% end %>
+
+<script>
+  $(window).bind('load', function() {
+$('img').each(function() {
+    if((typeof this.naturalWidth != "undefined" &&
+        this.naturalWidth == 0 ) 
+        || this.readyState == 'uninitialized' ) {
+        $(this).hide();
+    }
+}); })
+</script>
+
+

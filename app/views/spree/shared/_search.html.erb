@@ -1,0 +1,13 @@
+
+
+<% @taxons = @taxon && @taxon.parent ? @taxon.parent.children : Spree::Taxon.roots %>
+
+
+
+
+<%= form_tag products_path, method: :get, class: "navbar-form" do %>
+<div class="form-group">
+	<%= text_field_tag :q, nil, placeholder: 'Search', class: "form-control" %>
+</div>
+	<%= submit_tag "Go", class: 'btn btn-danger' %>
+<% end %>

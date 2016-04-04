@@ -1,0 +1,36 @@
+<div id="header-top">
+	<div class="container">
+
+  <div class="row">
+	 <div class="col-md-10">
+  	<i class="fa fa-phone"></i>
+		Call us <%= @add.phone %>
+    </div>
+   <div class="col-md-2">
+    <% if spree_current_user %>
+      <% if spree_current_user.has_spree_role?("admin") %>
+        <%= link_to "Admin Control", admin_path, class: 'admin_section' %>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+
+	</div>
+</div>
+
+<div id="spree-header">
+  <header id="header" data-hook>
+    <div class="container">
+      <div class="row">
+        <figure id="logo" class="col-md-4" data-hook>
+          <%= logo %>
+        </figure>
+        <%= render :partial => 'spree/shared/nav_bar' %>
+      </div>
+    </div>
+  </header>
+  
+  <div class="container">
+    <%= render :partial => 'spree/shared/main_nav_bar' if store_menu? %>
+  </div>
+</div>

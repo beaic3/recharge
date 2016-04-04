@@ -1,0 +1,313 @@
+<% if current_page?('https://beta2.herokuapp.com/admin/products/customeraddress/edit') %>
+	<style>
+		#product_name_field, #product_slug_field, #product_sale_field, #product_featured_field, #product_latest_field, #product_description_field, #product_taxons_field, #product_featured_field, #product_option_types_field, #product_meta_title_field, #product_meta_keywords_field, #product_meta_description_field {display: none;}
+		
+		#admin_new_product, .main-right-sidebar, #product_price_field, #product_cost_price_field, #product_cost_currency_field, #product_available_on_field, #product_sku_field, #product_ts_code_field, #product_promotionable_field, #shipping_specs, #product_shipping_categories_field, #product_tax_category_field {display: none;}
+	</style>
+<% end %>
+
+<div data-hook="admin_product_form_fields">
+
+  <div class="row">
+
+    <div class="col-md-8" data-hook="admin_product_form_left">
+      <div data-hook="admin_product_form_name">
+        <%= f.field_container :name, class: ['form-group'] do %>
+          <%= f.label :name, raw(Spree.t(:name) + content_tag(:span, ' *', class: 'required')) %>
+          <%= f.text_field :name, class: 'form-control title' %>
+          <%= f.error_message_on :name %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_form_slug">
+        <%= f.field_container :slug, class: ['form-group'] do %>
+          <%= f.label :slug, raw(Spree.t(:slug) + content_tag(:span, ' *', class: "required")) %>
+          <%= f.text_field :slug, class: 'form-control title' %>
+          <%= f.error_message_on :slug %>
+        <% end %>
+      </div>
+      
+      <%= f.field_container :sale do %>
+      <%= f.check_box :sale, :class => 'fullwidth title' %>
+      <%= f.label :sale, raw(Spree.t(:sale) + content_tag(:span, ' *',  :class => "required")) %>
+      <%= f.error_message_on :sale %>
+    <% end %>
+
+    <%= f.field_container :featured do %>
+      <%= f.check_box :featured, :class => 'fullwidth title' %>
+      <%= f.label :featured, raw(Spree.t(:featured) + content_tag(:span, ' *',  :class => "required")) %>
+      <%= f.error_message_on :featured %>
+    <% end %>
+
+    <%= f.field_container :latest do %>
+    <%= f.check_box :latest, :class => 'fullwidth title' %>
+      <%= f.label :latest, raw(Spree.t(:latest) + content_tag(:span, ' *',  :class => "required")) %>
+      <%= f.error_message_on :latest %>
+    <% end %>
+    
+    <br><br>
+    
+    <% if current_page?('https://beta2.herokuapp.com/admin/products/customeraddress/edit') %>
+    
+    <h3 style="background: #5799d8;color:white;">Edit/Add Your contact details for front page</h3>
+    
+    <%= f.field_container :address do %>
+      <%= f.text_area :address, :class => 'fullwidth title' %>
+      <%= f.label :address, raw(Spree.t(:address)) %>
+      <%= f.error_message_on :address %>
+    <% end %>
+    
+    <%= f.field_container :phone do %>
+      <%= f.text_field :phone, :class => 'fullwidth title' %>
+      <%= f.label :phone, raw(Spree.t(:phone)) %>
+      <%= f.error_message_on :phone %>
+    <% end %>
+    
+    <%= f.field_container :email do %>
+      <%= f.text_field :email, :class => 'fullwidth title' %>
+      <%= f.label :email, raw(Spree.t(:email)) %>
+      <%= f.error_message_on :email %>
+    <% end %>
+    
+    <%= f.field_container :mailer do %>
+      <%= f.text_field :mailer, :class => 'fullwidth title' %>
+      <%= f.label :mailer, raw(Spree.t(:mailer)) %>
+      <%= f.error_message_on :mailer %>
+    <% end %>
+    
+    <%= f.field_container :facebook do %>
+      <%= f.text_field :facebook, :class => 'fullwidth title' %>
+      <%= f.label :facebook, raw(Spree.t(:facebook)) %><span style="float:right;margin-left:30px;background:#5799d8;color:white;">Must be in format http://www.facebook.com/username</span>
+      <%= f.error_message_on :facebook %>
+    <% end %>
+    
+    <%= f.field_container :twitter do %>
+      <%= f.text_field :twitter, :class => 'fullwidth title' %>
+      <%= f.label :twitter, raw(Spree.t(:twitter)) %><span style="float:right;margin-left:30px;background:#5799d8;color:white;">Must be in format http://www.twitter.com/username</span>
+      <%= f.error_message_on :twitter %>
+    <% end %>
+    
+    <%= f.field_container :linkedin do %>
+      <%= f.text_field :linkedin, :class => 'fullwidth title' %>
+      <%= f.label :linkedin, raw(Spree.t(:linkedin)) %><span style="float:right;margin-left:30px;background:#5799d8;color:white;">Must be in format http://www.linkedin.com/username</span>
+      <%= f.error_message_on :linkedin %>
+    <% end %>
+
+
+    <%= f.field_container :vow_account_code do %>
+      <%= f.text_field :vow_account_code, :class => 'fullwidth title' %>
+      <%= f.label :vow_account_code, raw(Spree.t(:vow_account_code)) %>
+      <%= f.error_message_on :vow_account_code %>
+    <% end %>
+
+    <%= f.field_container :spicers_account_code do %>
+      <%= f.text_field :spicers_account_code, :class => 'fullwidth title' %>
+      <%= f.label :spicers_account_code, raw(Spree.t(:spicers_account_code)) %>
+      <%= f.error_message_on :spicers_account_code %>
+    <% end %>
+
+    
+	<% end %>
+    
+    <br><br>
+
+      <div data-hook="admin_product_form_description">
+        <%= f.field_container :description, class: ['form-group'] do %>
+          <%= f.label :description, Spree.t(:description) %>
+          <%= f.text_area :description, { rows: "#{unless @product.has_variants? then '20' else '13' end}", class: 'form-control' } %>
+          <%= f.error_message_on :description %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-hook="admin_product_form_right">
+      <div data-hook="admin_product_form_price">
+        <%= f.field_container :price, class: ['form-group'] do %>
+          <%= f.label :price, raw(Spree.t(:master_price) + content_tag(:span, ' *', class: "required")) %>
+          <%= f.text_field :price, value: number_to_currency(@product.price, unit: ''), class: 'form-control', disabled: (cannot? :update, Spree::Price) %>
+          <%= f.error_message_on :price %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_form_cost_price" class="alpha two columns">
+        <%= f.field_container :cost_price, class: ['form-group'] do %>
+          <%= f.label :cost_price, Spree.t(:cost_price) %>
+          <%= f.text_field :cost_price, value: number_to_currency(@product.cost_price, unit: ''), class: 'form-control' %>
+          <%= f.error_message_on :cost_price %>
+        <% end %>
+      </div>
+      <div data-hook="admin_product_form_cost_currency" class="omega two columns">
+        <%= f.field_container :cost_currency, class: ['form-group'] do %>
+          <%= f.label :cost_currency, Spree.t(:cost_currency) %>
+          <%= f.text_field :cost_currency, class: 'form-control' %>
+          <%= f.error_message_on :cost_currency %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_form_available_on">
+        <%= f.field_container :available_on, class: ['form-group'] do %>
+          <%= f.label :available_on, Spree.t(:available_on) %>
+          <%= f.error_message_on :available_on %>
+          <%= f.text_field :available_on, value: datepicker_field_value(@product.available_on), class: 'datepicker form-control' %>
+        <% end %>
+      </div>
+
+      <% if @product.has_variants? %>
+        <div data-hook="admin_product_form_multiple_variants" class="well">
+          <%= f.label :skus, Spree.t(:sku).pluralize %>
+          <div class="info marginb">
+            <%= Spree.t(:info_product_has_multiple_skus, count: @product.variants.count) %>
+            <ul class="text_list">
+              <% @product.variants.first(5).each do |variant| %>
+                <li><%= variant.sku %></li>
+              <% end %>
+            </ul>
+            <% if @product.variants.count > 5 %>
+              <em>
+                <%= Spree.t(:info_number_of_skus_not_shown, count: @product.variants.count - 5) %>
+              </em>
+            <% end %>
+          </div>
+          <div class="info-actions">
+            <% if can?(:admin, Spree::Variant) %>
+              <%= link_to_with_icon 'variants', Spree.t(:manage_variants), spree.admin_product_variants_url(@product), class: "btn btn-default" %>
+            <% end %>
+          </div>
+        </div>
+      <% else %>
+        <div data-hook="admin_product_form_sku">
+          <%= f.field_container :sku, class: ['form-group'] do %>
+            <%= f.label :sku, Spree.t(:sku) %>
+            <%= f.text_field :sku, size: 16, class: 'form-control' %>
+          <% end %>
+        </div>
+        
+        <%= f.field_container :ts_code do %>
+	      <%= f.label :ts_code, raw(Spree.t(:ts_code)) %><br>
+	      <%= f.text_field :ts_code, :class => 'fullwidth title' %>
+	      <%= f.error_message_on :ts_code %>
+		 <% end %><br>
+
+        <div data-hook="admin_product_form_promotionable">
+          <%= f.field_container :promotionable, class: ['form-group'] do %>
+              <%= f.label :promotionable %>
+              <%= f.error_message_on :promotionable %>
+              <%= f.check_box :promotionable, class: 'form-control' %>
+          <% end %>
+        </div>
+
+        <div id="shipping_specs" class="row">
+          <div class="col-md-6">
+            <div id="shipping_specs_weight_field" data-hook="admin_product_form_weight" class="form-group">
+              <%= f.label :weight, Spree.t(:weight) %>
+              <%= f.text_field :weight, size: 4, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div id="shipping_specs_height_field" data-hook="admin_product_form_height" class="form-group">
+              <%= f.label :height, Spree.t(:height) %>
+              <%= f.text_field :height, size: 4, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div id="shipping_specs_width_field" data-hook="admin_product_form_width" class="form-group">
+              <%= f.label :width, Spree.t(:width) %>
+              <%= f.text_field :width, size: 4, class: 'form-control' %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div id="shipping_specs_depth_field" data-hook="admin_product_form_depth" class="form-group">
+              <%= f.label :depth, Spree.t(:depth) %>
+              <%= f.text_field :depth, size: 4, class: 'form-control' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <div data-hook="admin_product_form_shipping_categories">
+        <%= f.field_container :shipping_categories, class: ['form-group'] do %>
+          <%= f.label :shipping_category_id, Spree.t(:shipping_categories) %>
+          <%= f.collection_select(:shipping_category_id, @shipping_categories, :id, :name, { include_blank: Spree.t('match_choices.none') }, { class: 'select2', disabled: (cannot? :edit, Spree::ShippingCategory) }) %>
+          <%= f.error_message_on :shipping_category %>
+        <% end %>
+      </div>
+
+      <div data-hook="admin_product_form_tax_category">
+        <%= f.field_container :tax_category, class: ['form-group'] do %>
+          <%= f.label :tax_category_id, Spree.t(:tax_category) %>
+          <%= f.collection_select(:tax_category_id, @tax_categories, :id, :name, { include_blank: Spree.t('match_choices.none') }, { class: 'select2', disabled: (cannot? :edit, Spree::TaxCategory) }) %>
+          <%= f.error_message_on :tax_category %>
+        <% end %>
+      </div>
+    </div>
+
+  </div>
+
+  <div data-hook="admin_product_form_taxons">
+    <%= f.field_container :taxons, class: ['form-group'] do %>
+      <%= f.label :taxon_ids, Spree.t(:taxons) %>
+
+      <% if can? :modify, Spree::Classification %>
+        <%= f.hidden_field :taxon_ids, value: @product.taxon_ids.join(',') %>
+      <% elsif @product.taxons.any? %>
+        <ul class="text_list">
+          <% @product.taxons.each do |taxon| %>
+            <li><%= taxon.name %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <div class="alert alert-info"><%= Spree.t(:no_resource_found, resource: :taxons) %></div>
+      <% end %>
+
+    <% end %>
+  </div>
+
+  <div data-hook="admin_product_form_option_types">
+    <%= f.field_container :option_types, class: ['form-group'] do %>
+      <%= f.label :option_type_ids, Spree.t(:option_types) %>
+
+      <% if can? :modify, Spree::OptionType %>
+        <%= f.hidden_field :option_type_ids, value: @product.option_type_ids.join(',') %>
+      <% elsif @product.option_types.any? %>
+        <ul class="text_list">
+          <% @product.option_types.each do |type| %>
+            <li><%= type.presentation %> (<%= type.name %>)</li>
+          <% end %>
+        </ul>
+      <% else %>
+        <div class="alert alert-info"><%= Spree.t(:no_resource_found, resource: :option_types) %></div>
+      <% end %>
+
+    <% end %>
+  </div>
+
+
+  <div data-hook="admin_product_form_meta">
+    <div data-hook="admin_product_form_meta_title">
+      <%= f.field_container :meta_title, class: ['form-group'] do %>
+        <%= f.label :meta_title, Spree.t(:meta_title) %>
+        <%= f.text_field :meta_title, class: 'form-control' %>
+      <% end %>
+    </div>
+
+    <div data-hook="admin_product_form_meta_keywords">
+      <%= f.field_container :meta_keywords, class: ['form-group'] do %>
+        <%= f.label :meta_keywords, Spree.t(:meta_keywords) %>
+        <%= f.text_field :meta_keywords, class: 'form-control' %>
+      <% end %>
+    </div>
+
+    <div data-hook="admin_product_form_meta_description">
+      <%= f.field_container :meta_description, class: ['form-group'] do %>
+        <%= f.label :meta_description, Spree.t(:meta_description) %>
+        <%= f.text_field :meta_description, class: 'form-control' %>
+      <% end %>
+    </div>
+
+    <div data-hook="admin_product_form_additional_fields"></div>
+
+  </div>
+</div>

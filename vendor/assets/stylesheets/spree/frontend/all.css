@@ -1,0 +1,332 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require spree/frontend
+
+ *= require_self
+ *= require_tree .
+ *= require store/spree_favorite_products
+ *= require spree/frontend/spree_reviews
+ *= require spree/frontend/spree_static_content
+*/
+
+/**
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
+
+.admin_section {
+	color: #fff;
+}
+
+hr.sale {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+    padding-bottom: 25px;
+}
+hr.sale:after {
+    content: "Sale Items";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+hr.featured {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+    padding-bottom: 25px;
+}
+hr.featured:after {
+    content: "Featured Items";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+hr.latest {
+    padding: 0;
+    border: none;
+    border-top: medium double #333;
+    color: #333;
+    text-align: center;
+    padding-bottom: 25px;
+}
+hr.latest:after {
+    content: "Latest Items";
+    display: inline-block;
+    position: relative;
+    top: -0.7em;
+    font-size: 1.5em;
+    padding: 0 0.25em;
+    background: white;
+}
+
+img {
+	width: 100%;
+}
+
+.sale, .featured, .latest h3 {
+	text-align: center;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+.panel-footer {
+	margin-top: 50px;
+}
+
+header img {
+	max-height: 3.5em;
+	max-width: 14.2em;
+}
+
+#header-top {
+	background: #333;
+	color: white;
+	padding: 10px 0;
+}
+
+#header {background: white !important;}
+
+
+
+header img {
+	max-height: 150px;
+	max-width: 255px;
+}
+
+div.logo-gone {
+	display: none;
+}
+
+#spree-header {
+	background: #333 !important;
+}
+
+#main-nav-bar a {
+	color: white !important;
+}
+
+input[type="submit"] {
+	background: #ec4445 !important;
+	color: white !important;
+	border: none !important;
+}
+
+.btn {
+	border: none !important;
+}
+
+button {
+	background: #ec4445 !important;
+}
+
+button a {
+	color: white !important;
+}
+
+button a:hover {
+	color: white !important;
+}
+
+.navbar a {
+	color: #333 !important;
+}
+
+footer {
+	width: 100%;
+	background: #333;
+	color: white;
+	clear: both;
+	margin-top: 10%;
+}
+
+#footer-top {
+	padding: 20px 0;
+	color: #949494;
+}
+
+#footer-bottom {
+	padding: 20px 0;
+	border-top: 1px solid #949494;
+	color: #949494;
+}
+
+#footer-top ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+#footer-top li {
+	border-bottom: 1px solid #949494;
+}
+
+#footer-top ul a {
+	color: #949494;
+	padding: 10px 0;
+	display: inline-block;
+}
+
+#footer-top h3 {
+	border-bottom: solid 2px #949494;
+	padding-bottom: 10px;
+	color: white !important;
+}
+
+img.greyLogo {
+	max-width: 11.2em;
+}
+
+.version {
+	color: #555 !important;
+}
+
+.hideIt {display: none !important;}
+
+form#contact_newsletter fieldset {
+	border: none;
+	padding: 0
+}
+
+form#contact_newsletter fieldset input {
+	background: #555555;
+	border: none !important;
+	color: #a7a7a7;
+	font-size: 0.68em;
+	padding: 0.95em 0.85em !important;
+	width: 100%;
+}
+
+form#contact_newsletter input[type="submit"] {
+	background: #ec4445 !important;
+	text-align: center !important;
+}
+
+.social a {
+	display: inline !important;
+}
+
+.foot-contact i {
+	display: block !important;
+	width: 100%;
+}
+
+.foot-contact div {
+	margin-bottom: 20px;
+}
+
+li.active > a {
+	background: #ec4445 !important;
+}
+
+.latest p {
+	text-align: center;
+}
+
+#slider {
+	margin-bottom: 30px;
+}
+
+.sale, .featured {
+	margin-bottom: 30px;
+}
+
+#triple-top {
+	margin-bottom: 30px;
+}
+
+img#credit-card-image.pull-right {
+	width: 100% !important;
+	height: auto !important;
+	max-width: 220px !important;
+}
+
+.payment-info img {
+	max-width: 50px !important;
+}
+
+.cart-item-image {
+	
+}
+
+.newsletter {
+	display: none;
+}
+
+h6.search-results-title {
+	font-size: 24px;
+	color: #ec4445;
+}
+
+a.footer-mail {
+	color: #fff !important;
+}
+
+#toTop{
+	bottom:12px;
+    position:fixed;
+    right:12px;
+    z-index:999;
+	}
+	#toTop A{
+		background:#ffffff;
+		border:1px solid #252525;
+		color:#252525;
+	    display:block;
+	    height:38px;
+	    transition:all 0.4s ease 0s;
+	    text-align:center;
+	    width:38px;
+		}
+		#toTop A:hover{
+		    background:#ec4445;
+		    border:1px solid #ec4445;
+		    color:#ffffff;
+			}
+		#toTop A I{
+			font-size:20px;
+    		line-height:38px;
+			}
+			#toTop A:hover I{
+			    color:#ffffff;
+				}
+
+
