@@ -2,7 +2,7 @@
   <%= Spree.t(:general_settings) %>
 <% end %>
 
-<h3><%= link_to "Click here to edit Contact details throughout Site", "https://beta2.herokuapp.com/admin/products/customeraddress/edit" %></h3>
+<h3><%= link_to "Click here to edit Contact details throughout Site", "/admin/products/customeraddress/edit" %></h3>
 
 <%= form_tag admin_general_settings_path, method: :put do %>
   <div id="preferences" data-hook>
