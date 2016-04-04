@@ -1,4 +1,14 @@
 GIT
+  remote: git://github.com/elasticsearch/elasticsearch-rails.git
+  revision: a714d5931182501531d2ce6b767bcb3c97ce56a7
+  specs:
+    elasticsearch-model (0.1.8)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.8)
+
+GIT
   remote: git://github.com/spree-contrib/spree_mail_settings.git
   revision: 99af7e4a137ac76fe4e93b1c8e5a38d81583904c
   branch: 3-0-stable
@@ -105,6 +115,7 @@ GEM
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bonsai-elasticsearch-rails (0.0.4)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -157,11 +168,6 @@ GEM
       elasticsearch-transport (= 1.0.15)
     elasticsearch-api (1.0.15)
       multi_json
-    elasticsearch-model (0.1.8)
-      activesupport (> 3)
-      elasticsearch (> 0.4)
-      hashie
-    elasticsearch-rails (0.1.8)
     elasticsearch-transport (1.0.15)
       faraday
       multi_json
@@ -441,11 +447,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bonsai-elasticsearch-rails
   byebug
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.1.0)
-  elasticsearch-model
-  elasticsearch-rails
+  elasticsearch-model!
+  elasticsearch-rails!
   fog (~> 1.24.0)
   font-awesome-rails
   jbuilder (~> 2.0)
