@@ -9,21 +9,21 @@ module Spree
     respond_to :html
 
     def index
-       #@searcher = build_searcher(params.merge(include_images: true))
-      #@products = @searcher.retrieve_products
+
       @taxonomies = Spree::Taxonomy.includes(root: :children)
 
-      @query = params[:q].presence || "*"
+      @query = params[:search].presence || "*"
       #@products = Spree::Product.search(@query, fields: [:name, :machine_models], highlight: {fields: [:name]})
+      
+
       if params[:search].present?
         @products = Spree::Product.__elasticsearch__.search(params[:search]).records
       else
         @products = Spree::Product.all
       end
+
     end
 
-
- 
 
     def show
 	  @imageProds = "http://ts.liveofficedata.co.uk/" + @product.image_url
