@@ -9,19 +9,14 @@ module Spree
     respond_to :html
 
     def index
-
       @taxonomies = Spree::Taxonomy.includes(root: :children)
-
       @query = params[:search].presence || "*"
-      #@products = Spree::Product.search(@query, fields: [:name, :machine_models], highlight: {fields: [:name]})
       
-
       if params[:search].present?
         @products = Spree::Product.__elasticsearch__.search(params[:search]).records
       else
         @products = Spree::Product.all
       end
-
     end
 
 
