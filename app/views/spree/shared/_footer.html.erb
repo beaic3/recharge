@@ -18,17 +18,26 @@
 					<h3>Contact</h3>
 					<div>
 						<i class="fa fa-map-marker">					
+						<% if @add.nil? %>
+		  
+					    <% else %>
+					      <p><%= @add.address %></p>
+					    <% end %>
 						
-						<p><%= @add.address %></p>
 					</div>
 					<div>
 						<i class="fa fa-phone">
-						<p><%= @add.phone %></p>
+						<% if @add.nil? %>
+		  
+					    <% else %>
+					      <p><%= @add.phone %></p>
+					    <% end %>
+						
 					</div>
 					<div>
 						<i class="fa fa-envelope-o">
 						<p>
-						<a class="footer-mail" href="mailto:<%= @add.email %>?Subject=Sales" target="_top"><%= @add.email %></a>
+						<a class="footer-mail" href="mailto:<% if @add.nil?%><% else %><%= @add.email %><% end %>?Subject=Sales" target="_top"><% if @add.nil?%><% else %><%= @add.email %><% end %></a>
 						</p>
 					</div>
 				</div>
@@ -52,19 +61,19 @@
 					<div class="social">
 						<ul>
 							<li>
-								<a title="facebook" href="<%= @add.facebook %>" target="_blank">
+								<a title="facebook" href="<% if @add.nil?%><% else %><%= @add.facebook %><% end %>" target="_blank">
 									<i class="fa fa-facebook"></i>
 								</a>
 							</li>
 
 							<li>	
-								<a title="twitter" href="<%= @add.twitter %>" target="_blank">
+								<a title="twitter" href="<% if @add.nil?%><% else %><%= @add.twitter %><% end %>" target="_blank">
 									<i class="fa fa-twitter"></i>
 								</a>
 							</li>
 
 							<li>	
-								<a title="linkedin" href="<%= @add.linkedin %>" target="_blank">
+								<a title="linkedin" href="<% if @add.nil?%><% else %><%= @add.linkedin %><% end %>" target="_blank">
 									<i class="fa fa-linkedin"></i>
 								</a>
 							</li>
