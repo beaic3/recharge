@@ -15,11 +15,11 @@
 <style>.red {font-weight: bold;color: red !important;}</style>
 
 
-<h2>You searched for <b>"<%= @query %>"</b></h2><br><br>
+<h2>You searched for <b>"<%= @products %>"</b></h2><br><br>
 
 <% if @products.empty? %>
 
-  <h3>Can't find what you're looking for? <br><br>Then call us on <b><%= @add.phone %></b> and email us on <b><a style="color:#333 !important" class="footer-mail" href="mailto:<%= @add.email %>?Subject=Sales" target="_top"><%= @add.email %></a></b></h3>
+  <h3>Can't find what you're looking for? <br><br>Then call us on <b><% if @add.nil?%><% else %><%= @add.phone %><% end %></b> and email us on <b><a style="color:#333 !important" class="footer-mail" href="mailto:<% if @add.nil?%><% else %><%= @add.email %><% end %>?Subject=Sales" target="_top"><% if @add.nil?%><% else %><%= @add.email %><% end %></a></b></h3>
 
 <% else %>
 
