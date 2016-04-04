@@ -30,12 +30,12 @@
       </div>
 
       <div class="col-md-5">
-        <h3><%= link_to product.name.gsub(/(#{@query})/i, '<span class="red">\1</span>').html_safe, product %></h3>
+        <h3><%= link_to product.name.gsub(/(#{@products})/i, '<span class="red">\1</span>').html_safe, product %></h3>
         <p>€<%= product.price %></p>
       </div>
       <div class="col-md-4">
         <h3>Machine Fits</h3>
-        <p><%= product.machine_models.gsub(/(#{@query})/i, '<span class="red">\1</span>').html_safe %></p>
+        <p><%= product.machine_models.gsub(/(#{@products})/i, '<span class="red">\1</span>').html_safe %></p>
       </div>
     </div>
     <div style="clear:both;height:30px;"></div>
