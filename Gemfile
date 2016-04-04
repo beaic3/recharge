@@ -36,7 +36,7 @@ gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '3-0-stable'
 
 gem 'rails_12factor', group: :production
 gem 'seed_dump'
-gem "searchkick"
+#gem "searchkick"
 
 gem 'elasticsearch-model', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
 gem 'elasticsearch-rails', git: 'git://github.com/elasticsearch/elasticsearch-rails.git'
