@@ -22,7 +22,7 @@ task :xmlord => :environment do
 
     print "--- setting up Amazon s3 connection ---"
     amazon = S3::Service.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
-    bucket = amazon.buckets.find("beta1")
+    bucket = amazon.buckets.find("recharge-cartridges")
 
       @orders.each do |o|
         @line = Spree::LineItem.where(order_id: o.id)
