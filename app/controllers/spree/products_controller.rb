@@ -10,9 +10,8 @@ module Spree
 
     def index
       @taxonomies = Spree::Taxonomy.includes(root: :children)
-      @query = params[:search].presence || "*"
-      
       if params[:search].present?
+        @query = params[:search].presence || "*"
         @products = Spree::Product.__elasticsearch__.search(params[:search]).records
       else
         @products = Spree::Product.all
