@@ -1,3 +1,4 @@
+require 'aws-sdk'
 require 'open-uri'
 require 'csv'
 
