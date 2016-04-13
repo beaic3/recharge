@@ -11,14 +11,12 @@ task :update, [:filename] => :environment do
 		product.update(parameters.permit(:cost_price,:price))
 	end
 
-	print "--- setting up Amazon s3 connection ---"
-    amazon = S3::Service.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
-    bucket = amazon.buckets.find("recharge-cartridges")
+print "--- setting up Amazon s3 connection ---"
+creds = Aws::SharedCredentials.new(profile_name: 'my_profile')
+s3 = Aws::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
 
-    #amazon.move_to(bucket: "recharge-cartridges",
-                   #copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"),
-                   #key: "import_rename.csv")
-    #amazon.delete_object(bucket: "recharge-cartridges",
-                   #key: "recharge_pricing.csv")
+#bucket = amazon.buckets.find("recharge-cartridges")
+s3.move_to(bucket: "recharge-cartridges", copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"), key: "import_rename.csv")
+s3.delete_object(bucket: "recharge-cartridges", key: "recharge_pricing.csv")
 
 end
