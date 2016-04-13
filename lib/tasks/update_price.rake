@@ -12,13 +12,14 @@ task :update, [:filename] => :environment do
 
 	print "--- setting up Amazon s3 connection ---"
 
-    amazon = AWS::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
+    #amazon = AWS::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
     #bucket = amazon.buckets.find("recharge-cartridges")
 
-    print "--- Service started and bucket found ---"
-    print "--- Starting to copy file and delete original ---"
+    #print "--- Service started and bucket found ---"
+    #print "--- Starting to copy file and delete original ---"
 
-	AWS::S3::S3Object.delete_object('recharge_pricing.csv', 'recharge-cartridges')
+	s3 = Aws::S3.new(APP_CONFIG['AWS_ACCESS_KEY_ID'], APP_CONFIG['AWS_SECRET_ACCESS_KEY'])
+	s3.bucket('recharge-cartridges').delete_key('recharge_pricing.csv')
 
     #amazon.move_to(bucket: "recharge-cartridges",
                    #copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"),
