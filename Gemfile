@@ -11,7 +11,7 @@ gem 'turbolinks'
 gem 'carrierwave', '~> 0.10.0'
 gem 'fog', '~> 1.24.0'
 gem 's3'
-gem 'aws-sdk', '~> 1'
+
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem "font-awesome-rails"
