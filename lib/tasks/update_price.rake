@@ -13,7 +13,7 @@ task :update, [:filename] => :environment do
 	print "--- setting up Amazon s3 connection ---"
 
     amazon = AWS::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
-    bucket = amazon.buckets.find("recharge-cartridges")
+    #bucket = amazon.buckets.find("recharge-cartridges")
 
     print "--- Service started and bucket found ---"
     print "--- Starting to copy file and delete original ---"
