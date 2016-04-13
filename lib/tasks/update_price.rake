@@ -17,7 +17,7 @@ s3 = Aws::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"], secret_access_k
                               credentials: creds)
 
 #bucket = amazon.buckets.find("recharge-cartridges")
-s3.move_to(bucket: "recharge-cartridges", copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"), key: "import_rename.csv")
+s3.copy_object(bucket: "recharge-cartridges", copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"), key: "import_rename.csv")
 s3.delete_object(bucket: "recharge-cartridges", key: "recharge_pricing.csv")
 
 end
