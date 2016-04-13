@@ -18,7 +18,7 @@ task :update, [:filename] => :environment do
     print "--- Service started and bucket found ---"
     print "--- Starting to copy file and delete original ---"
 
-	AWS::S3::S3Object.delete('recharge_pricing.csv', 'recharge-cartridges')
+	AWS::S3::S3Object.delete_object('recharge_pricing.csv', 'recharge-cartridges')
 
     #amazon.move_to(bucket: "recharge-cartridges",
                    #copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"),
