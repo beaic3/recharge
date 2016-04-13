@@ -1,6 +1,5 @@
 require 'open-uri'
 require 'csv'
-require 'aws-sdk'
 
 desc "Imports a CSV file into an ActiveRecord table"
 
