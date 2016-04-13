@@ -18,7 +18,6 @@ task :update, [:filename] => :environment do
     print "--- Service started and bucket found ---"
     print "--- Starting to copy file and delete original ---"
 
-    AWS::S3::Base.establish_connection!(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
 	AWS::S3::S3Object.delete('recharge_pricing.csv', 'recharge-cartridges')
 
     #amazon.move_to(bucket: "recharge-cartridges",
