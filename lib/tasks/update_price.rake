@@ -12,9 +12,7 @@ task :update, [:filename] => :environment do
 	end
 
 print "--- setting up Amazon s3 connection ---"
-creds = Aws::SharedCredentials.new(profile_name: 'my_profile')
-s3 = Aws::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"], secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"], region: 'Ireland',
-                              credentials: creds)
+s3 = Aws::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"], secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"], region: 'Ireland')
 
 #bucket = amazon.buckets.find("recharge-cartridges")
 s3.copy_object(bucket: "recharge-cartridges", copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"), key: "import_rename.csv")
