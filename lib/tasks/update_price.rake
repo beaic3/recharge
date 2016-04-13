@@ -14,7 +14,7 @@ task :update, [:filename] => :environment do
 	print "--- setting up Amazon s3 connection ---"
     amazon = S3::Service.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
     bucket = amazon.buckets.find("recharge-cartridges")
-    amazon.copy_object(bucket: "recharge-cartridges",
+    amazon.move_to(bucket: "recharge-cartridges",
                    copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"),
                    key: "import_rename.csv")
     amazon.delete_object(bucket: "recharge-cartridges",
