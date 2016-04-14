@@ -10,20 +10,7 @@ task :update, [:filename] => :environment do
 		product.update(parameters.permit(:cost_price,:price))
 	end
 
-	print "--- update complete ---"
-
-	print "--- setting up Amazon s3 connection ---"
-	amazon = S3::Service.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
-
-	print "--- finding bucket recharge-cartridges ---"
-	bucket = amazon.buckets.find("recharge-cartridges")
-
-	print "--- finding csv file ---"
-	object = bucket.objects.find("recharge_pricing.csv")
-
-	print "--- deleting csv file ---"
-	object.destroy
-	print "--- process complete ---"
+	
     #amazon = AWS::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
     #bucket = amazon.buckets.find("recharge-cartridges")
 
