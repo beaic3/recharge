@@ -1,4 +1,3 @@
-require 'open-uri'
 require 'csv'
 
 desc "Imports a CSV file into an ActiveRecord table"
@@ -9,4 +8,21 @@ task :update, [:filename] => :environment do
 		parameters = ActionController::Parameters.new(row.to_hash)
 		product.update(parameters.permit(:cost_price,:price))
 	end
+
+	puts "--- update complete ---"
+
+	puts "--- setting up Amazon s3 connection ---"
+	amazon = S3::Service.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
+
+	puts "--- finding bucket recharge-cartridges ---"
+	bucket = amazon.buckets.find("recharge-cartridges")
+
+	puts "--- finding csv file ---"
+	object = bucket.objects.find("recharge_pricing.csv")
+
+	puts "--- deleting csv file ---"
+	object.destroy
+	puts "--- process complete ---"
+
+
 end
