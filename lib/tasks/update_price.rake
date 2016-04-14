@@ -9,21 +9,4 @@ task :update, [:filename] => :environment do
 		parameters = ActionController::Parameters.new(row.to_hash)
 		product.update(parameters.permit(:cost_price,:price))
 	end
-
-	
-    #amazon = AWS::S3::Client.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
-    #bucket = amazon.buckets.find("recharge-cartridges")
-
-    #print "--- Service started and bucket found ---"
-    #print "--- Starting to copy file and delete original ---"
-
-	#s3 = AWS::S3.new(access_key_id:ENV["AWS_ACCESS_KEY_ID"] , secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"])
-	#s3.bucket('recharge-cartridges').delete_key('recharge_pricing.csv')
-
-    #amazon.move_to(bucket: "recharge-cartridges",
-                   #copy_source: URI::encode("recharge-cartridges/recharge_pricing.csv"),
-                   #key: "import_rename.csv")
-    #amazon.delete_object(bucket: "recharge-cartridges",
-                   #key: "recharge_pricing.csv")
-
 end
