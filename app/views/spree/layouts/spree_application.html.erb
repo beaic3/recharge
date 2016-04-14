@@ -8,8 +8,7 @@
     <%= render partial: 'spree/shared/head' %>
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/nivo-slider.css" type="text/css" />
-    
-	<script src="assets/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+    <script src="assets/jquery.nivo.slider.pack.js" type="text/javascript"></script>
   </head>
   <body class="<%= body_class %>" id="<%= @body_id || 'default' %>" data-hook="body">
 	  <% @add = Spree::Product.find_by(name: "customer-address") %>
