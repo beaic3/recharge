@@ -1,0 +1,14 @@
+#page_content,
+#page_content .branche-image.
+#page_content .branche-content{
+	float:left;
+	width:100%;
+	}
+	#page_content .branche-image IMG{
+		max-width:18.8em;
+		}
+#page_content .branche-content{
+	background:#f6f6f6;
+	min-height:10.2em;
+	padding:1.1em;
+	}
