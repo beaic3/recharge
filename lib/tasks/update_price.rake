@@ -24,5 +24,4 @@ task :update, [:filename] => :environment do
 	object.destroy
 	puts "--- process complete ---"
 
-
 end
