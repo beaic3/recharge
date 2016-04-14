@@ -1,4 +1,3 @@
-require 'open-uri'
 require 'csv'
 
 desc "Imports a CSV file into an ActiveRecord table"
