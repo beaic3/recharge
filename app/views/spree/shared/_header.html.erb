@@ -29,7 +29,15 @@
         <figure id="logo" class="col-md-4" data-hook>
           <%= logo %>
         </figure>
-        <%= render :partial => 'spree/shared/nav_bar' %>
+        <div class="class="navbar col-md-8"">
+          <%= render :partial => 'spree/shared/nav_bar' %>
+          <div class="col-xs-12 col-md-12">
+            <button class="btn- btn-primary btn-lg">
+              <span class="glyphicons glyphicons-phone-alt" aria-hidden="true"></span>
+              <span>Contact us <span>for more information</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
