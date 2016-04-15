@@ -12,6 +12,9 @@ A{
 .row-space{
 	margin:0 0 1.35em;
 	}
+#top-nav-bar UL{
+	margin-right:0;
+	}
 #header A.btn{
 	float:right;
     padding:0 12px 0.05em 0;
@@ -22,7 +25,7 @@ A{
 	    color:#ffffff;
 	    float:left;
 	    font-size:1.7em;
-	    line-height:0.8em;
+	    line-height:1em;
 	    padding:0.6em 0 0.35em;
 	    text-transform:uppercase;
 	    width:82.2%;
