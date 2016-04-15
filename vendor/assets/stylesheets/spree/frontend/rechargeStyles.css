@@ -1,3 +1,9 @@
+P{
+	font-size:1.15em;
+	}
+.btn{
+    background:#ec4445!important;
+	}
 #page_content,
 #page_content .branch-image,
 #page_content .branch-content{
@@ -11,4 +17,7 @@
 	background:#f6f6f6;
 	min-height:10.2em;
 	padding:1.1em;
+	}
+#page_content .row-space{
+	margin:0 0 1.35em;
 	}
