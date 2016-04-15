@@ -26,13 +26,13 @@ A{
 #page_content .row-space{
 	margin:0 0 1.35em;
 	}
-	#page_content .map-responsive{
+	#page_content #map-responsive{
 	    overflow:hidden;
 	    padding-bottom:56.25%;
 	    position:relative;
 	    height:0;
 		}
-	#page_content .map-responsive IFRAME{
+	#page_content #map-responsive IFRAME{
 	    left:0;
 	    top:0;
 	    height:100%;
