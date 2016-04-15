@@ -21,7 +21,10 @@ A{
 #header A.btn{
 	float:right;
     padding:0 12px 0.05em 0;
-    width:27.3%;
+    width:15em;
+	}
+.col-xs-12 #header A.btn{
+    margin:0 10%;
 	}	
 	#header A.btn SPAN{
 		background:#ec4445;
