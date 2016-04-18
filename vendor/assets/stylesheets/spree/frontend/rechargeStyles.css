@@ -104,7 +104,7 @@ A{
 		    width:100%;
 			}
 			#top-nav-bar UL A{
-				background:none;
+				background:none!important;
 			    border-bottom:1px solid #ffffff;
 			    color:#ffffff!important;
 			    margin:0 1em;
