@@ -80,12 +80,12 @@ A{
 /* Mobile devices */
 @media screen and (min-device-width:320px) and (max-device-width:400px){
 	#top-nav-bar{
-		left:0;
+		left:-1.1em;    
 	    min-height:1em;
 	    padding:0;
-	    position:absolute;
+	    position:relative;
 	    top:-13.2em;
-	    width:100%;
+	    width:4em;
 	    z-index:999;
 		}
 		#top-nav-bar SPAN.glyphicon-menu-hamburger{
@@ -101,6 +101,8 @@ A{
 			background:#4f4f4f;
 		    float:left;
 		    margin:0;
+		    max-width:400px;
+    		min-width:320px;
 		    width:100%;
 			}
 			#top-nav-bar UL LI A{
