@@ -21,17 +21,17 @@ A{
 #header A.btn{
 	float:right;
     padding:0 12px 0.05em 0;
-    width:15em;
+    width:11em;
 	}
 	#header A.btn SPAN{
 		background:#ec4445;
 	    color:#ffffff;
 	    float:left;
-	    font-size:1.7em;
+	    font-size:1.25em;
 	    line-height:1em;
-	    padding:0.6em 0 0.35em;
+	    padding:0.5em 0 0.3em 0;
 	    text-transform:uppercase;
-	    width:82.2%;
+	    width:84.6%;
 		}
 		#header A.btn SPAN SPAN{
 			float:left;
@@ -45,7 +45,7 @@ A{
 	    border-radius:2.5em;
 	    color:#ec4445;
 	    float:left;
-	    font-size:2em;
+	    font-size:1.3em;
 	    margin:-1px 0 0 -1em;
 	    padding:0.3em;
 	    width:auto;
