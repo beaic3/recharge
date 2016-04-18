@@ -103,13 +103,16 @@ A{
 		    margin:0;
 		    width:100%;
 			}
-			#top-nav-bar UL A{
+			#top-nav-bar UL LI A{
 				background:none!important;
 			    border-bottom:1px solid #ffffff;
 			    color:#ffffff!important;
 			    margin:0 1em;
 				}
-				#top-nav-bar UL A:hover{
+				#top-nav-bar UL LI A:hover{
 				    color:#ec4445!important;
 					}
+			#top-nav-bar UL LI:last-child A{
+			    border-bottom:none;
+				}
 }
