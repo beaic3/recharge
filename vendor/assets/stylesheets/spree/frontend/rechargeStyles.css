@@ -12,12 +12,19 @@ A{
 .row-space{
 	margin:0 0 1.35em;
 	}
+.admin_section{
+    font-size:1em;
+	}
 #top-nav-bar UL{
 	margin-right:0;
 	}
 	#top-nav-bar UL #search-bar{
 		display:none;
 		}
+#search-bar FORM{
+	margin-right:0;
+    padding:0;
+	}
 #header A.btn{
 	float:right;
     padding:0 12px 0.05em 0;
