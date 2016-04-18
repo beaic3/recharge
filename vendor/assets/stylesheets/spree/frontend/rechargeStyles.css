@@ -12,12 +12,9 @@ A{
 .row-space{
 	margin:0 0 1.35em;
 	}
-#top-nav-bar{
-	margin-bottom:0.5em!important;
+#top-nav-bar UL{
+	margin-right:0;
 	}
-	#top-nav-bar UL{
-		margin-right:0;
-		}
 #header A.btn{
 	float:right;
     padding:0 12px 0.05em 0;
