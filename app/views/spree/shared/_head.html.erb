@@ -6,9 +6,10 @@
 <%= canonical_tag(current_store.url) %>
 <%= favicon_link_tag 'favicon.ico' %>
 <%= stylesheet_link_tag 'spree/frontend/all', media: 'screen' %>
+<%= stylesheet_link_tag 'spree/frontend/slicknav', media: 'screen' %>
 <%= csrf_meta_tags %>
 <%= javascript_include_tag 'spree/frontend/all' %>
-<%= javascript_include_tag 'spree/frontend/slicknav' %>
+<%= javascript_include_tag '/assets/spree/frontend/slicknav' %>
 <!--[if lt IE 9]>
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
 <![endif]-->
@@ -18,7 +19,7 @@
 <script>
 	$(document).ready(function(){
 		$("#top-nav-bar").slicknav();
-		
+
 		$("#toTop").css("display", "none");
 			
 			//Check to see if the window is top if not then display button
