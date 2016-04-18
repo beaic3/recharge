@@ -12,7 +12,8 @@ A{
 .row-space{
 	margin:0 0 1.35em;
 	}
-.admin_section{
+.admin_section,
+#spree-header .nav A{
     font-size:1em;
 	}
 #top-nav-bar UL{
