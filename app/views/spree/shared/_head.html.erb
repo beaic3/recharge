@@ -15,14 +15,9 @@
 <% @add = Spree::Product.find_by(name: "customer-address") %>
 
 <script>
-	jQuery.noConflict();
-	(function($){
-		$(document).ready(function(){
-			$("#top-nav-bar").slicknav();
-		});
-	})(jQuery);
-
 	$(document).ready(function(){
+		$("#top-nav-bar").slicknav();
+
 		$("#toTop").css("display", "none");
 			
 			//Check to see if the window is top if not then display button
