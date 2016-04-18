@@ -16,6 +16,9 @@ A{
 #spree-header .nav A{
     font-size:1em;
 	}
+#top-nav-bar SPAN.glyphicon-menu-hamburger{
+	display:none;
+	}
 #top-nav-bar UL{
 	display:block;
 	margin-right:0;
@@ -76,6 +79,9 @@ A{
 
 /* Mobile devices */
 @media screen and (min-device-width:320px) and (max-device-width:400px){
+	#top-nav-bar SPAN.glyphicon-menu-hamburger{
+		display:block;
+		}
 	#top-nav-bar UL{
 		display:none;
 		}
