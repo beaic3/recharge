@@ -17,6 +17,7 @@ A{
     font-size:1em;
 	}
 #top-nav-bar UL{
+	display:block;
 	margin-right:0;
 	}
 	#top-nav-bar UL #search-bar{
