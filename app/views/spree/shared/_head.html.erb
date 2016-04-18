@@ -20,20 +20,30 @@
 
 		$("#toTop").css("display", "none");
 			
-			//Check to see if the window is top if not then display button
-			$(window).scroll(function(){
-				if ($(this).scrollTop() > 100) {
-					$('#toTop').fadeIn();
-				} else {
-					$('#toTop').fadeOut();
-				}
-			});
-			
-			//Click event to scroll to top
-			$('#toTop').click(function(){
-				$('html, body').animate({scrollTop : 0},1000);
-				return false;
-			});
+		//Check to see if the window is top if not then display button
+		$(window).scroll(function(){
+			if ($(this).scrollTop() > 100) {
+				$('#toTop').fadeIn();
+			} else {
+				$('#toTop').fadeOut();
+			}
+		});
+		
+		//Click event to scroll to top
+		$('#toTop').click(function(){
+			$('html, body').animate({scrollTop : 0},1000);
+			return false;
+		});
+
+		$("#top-nav-bar ul").before("<span aria-hidden="true" class="glyphicon glyphicon-align-justify"></span>");
+		$("#top-nav-bar span").click(function(){
+			//slide up all the link lists
+			$("#top-nav-bar ul").slideUp();
+			//slide down the link list below the h3 clicked - only if its closed
+			if(!$(this).next().is(":visible")){
+				$(this).next().slideDown();
+			}
+		});
 	});
 </script>
 
