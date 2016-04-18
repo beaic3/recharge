@@ -73,3 +73,10 @@ A{
 	min-height:10.2em;
 	padding:1.1em;
 	}
+
+/* Mobile devices */
+@media screen and (min-device-width:320px) and (max-device-width:400px){
+	#top-nav-bar UL{
+		display:none;
+		}
+}
