@@ -79,6 +79,9 @@ A{
 #header #search-bar SPAN.glyphicon-search{
 	display:none;
 	}
+#header #search-bar form{
+	display:block;
+	}
 
 /* Mobile devices */
 @media screen and (min-device-width:320px) and (max-device-width:400px){
@@ -144,8 +147,10 @@ A{
 		color:#ffffff;
 		display:block;
 	    padding:1em;
+	    width:3em;
 		}
 	#header #search-bar form{
+		display:none;
 		margin:0.5em 0.1em;
 		}
 	#header .contact-button{
