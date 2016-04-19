@@ -90,11 +90,14 @@ A{
 			A.admin_section:hover{
 				color:#ec4445;
 			}
-	#spree-header .navbar.col-md-9{
-		padding:0;
-		position:absolute;
-    	width:100%;
+	#spree-header #header{
+		min-height:12.8em;
 		}
+		#spree-header .navbar.col-md-9{
+			padding:0;
+			position:absolute;
+	    	width:100%;
+			}
 	#top-nav-bar{
 		left:0;    
 	    min-height:1em;
@@ -133,4 +136,11 @@ A{
 			#top-nav-bar UL LI:first-child A{
 			    border-top:none;
 				}
+	#header .contact-button{
+		position:absolute;
+		}
+		#header .contact-button A.btn{
+			position:absolute;
+			top:-0.7em;
+			}
 }
