@@ -136,11 +136,19 @@ A{
 			#top-nav-bar UL LI:first-child A{
 			    border-top:none;
 				}
+	#header #search-bar SPAN.glyphicon-search{
+		background:#333333;
+	    padding:1em;
+		}
+	#header #search-bar form{
+		margin:0.5em 0.1em;
+		}
 	#header .contact-button{
-		position:absolute;
+		position:static;
 		}
 		#header .contact-button A.btn{
 			position:absolute;
-			top:-0.7em;
+			right:1em;
+			top:0;
 			}
 }
