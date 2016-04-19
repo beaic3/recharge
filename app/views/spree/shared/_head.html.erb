@@ -33,11 +33,25 @@
 			return false;
 		});
 
+		// User menu
 		$("#top-nav-bar ul").before('<span class="glyphicon glyphicon-menu-hamburger"></span>');
 		$("#top-nav-bar span").click(function(){
 			//slide up all the link lists
 			$("#top-nav-bar ul").slideUp();
-			$(this).css("color", "#ffffff");
+			$("#top-nav-bar ul").css("color", "#ffffff");
+			//slide down the link list below the h3 clicked - only if its closed
+			if(!$(this).next().is(":visible")){
+				$(this).next().slideDown();
+				$(this).css("color", "#ec4445");
+			}
+		});
+
+		// Search box
+		$("#search-bar form").before('<span class="glyphicon glyphicon-search"></span>');
+		$("#search-bar span").click(function(){
+			//slide up all the link lists
+			$("#search-bar form").slideUp();
+			$("#search-bar form").css("color", "#ffffff");
 			//slide down the link list below the h3 clicked - only if its closed
 			if(!$(this).next().is(":visible")){
 				$(this).next().slideDown();
