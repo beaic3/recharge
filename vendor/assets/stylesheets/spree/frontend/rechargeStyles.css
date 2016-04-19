@@ -79,42 +79,48 @@ A{
 
 /* Mobile devices */
 @media screen and (min-device-width:320px) and (max-device-width:400px){
+	#header-top{
+	    position:relative;
+	    z-index:999;
+		}
+	.navbar{
+		padding:0;
+		}
 	#top-nav-bar{
 		left:-1.1em;    
 	    min-height:1em;
 	    padding:0;
 	    position:relative;
 	    top:-13.2em;
-	    width:4em;
-	    z-index:999;
 		}
 		#top-nav-bar SPAN.glyphicon-menu-hamburger{
 			background:#4f4f4f;
 		    color: #ffffff;
+		    cursor:pointer;
 		    display:block;
 		    font-size:1.5em;
 		    padding:0.9em 0.8em;
+		    position:relative;
 		    width:2.6em;
+		    z-index:999;
 			}
 		#top-nav-bar UL{
 			display:none;
 			background:#4f4f4f;
 		    float:left;
 		    margin:0;
-		    max-width:400px;
-    		min-width:320px;
 		    width:100%;
 			}
 			#top-nav-bar UL LI A{
 				background:none!important;
-			    border-bottom:1px solid #ffffff;
+			    border-top:1px solid #ffffff;
 			    color:#ffffff!important;
 			    margin:0 1em;
 				}
 				#top-nav-bar UL LI A:hover{
 				    color:#ec4445!important;
 					}
-			#top-nav-bar UL LI:last-child A{
-			    border-bottom:none;
+			#top-nav-bar UL LI:first-child A{
+			    border-top:none;
 				}
 }
