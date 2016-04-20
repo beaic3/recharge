@@ -40,7 +40,6 @@
                 <table style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;">
                     <% @order.line_items.each do |item| %>
                         <tr>
-                            <td style="color:#333333;font-size:1em;"><%= item.variant.sku %></td>
                             <td style="color:#333333;font-size:1em;">
                                 <%= raw(item.variant.product.name) %>
                                 <%= raw(item.variant.options_text) -%>
@@ -67,8 +66,8 @@
                         </tr>
                     <% end %>
                     <tr>
-                        <td style="color:#333333;font-size:1em;"><%= Spree.t('order_mailer.cancel_email.total') %></td>
-                        <td style="color:#333333;font-size:1em;text-align:right;"><%= @order.display_total %></td>
+                        <td style="color:#333333;font-size:1em;font-weight:bold;"><%= Spree.t('order_mailer.cancel_email.total') %></td>
+                        <td style="color:#333333;font-size:1.3em;font-weight:bold;text-align:right;"><%= @order.display_total %></td>
                     </tr>
                 </table>
             </td>
