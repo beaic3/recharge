@@ -82,6 +82,11 @@ A{
 #header #search-bar form{
 	display:block;
 	}
+#triple-top A{
+	float:left;
+    margin:0 0 0.7em;
+    width:100%;
+	}
 
 /* Mobile devices */
 @media screen and (min-device-width:320px) and (max-device-width:400px){
