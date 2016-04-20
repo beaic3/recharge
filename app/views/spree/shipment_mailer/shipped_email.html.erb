@@ -51,9 +51,6 @@
                 <p style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;margin:0 0 1em 0;">
                   <%= Spree.t('shipment_mailer.shipped_email.track_link',        :url      => @shipment.tracking_url) if @shipment.tracking_url %>
                 </p>
-                <p style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;margin:0 0 1em 0;">
-                  <%= Spree.t('shipment_mailer.shipped_email.thanks') %>
-                </p>
           </td>
         </tr>
         <tr>
@@ -62,6 +59,14 @@
     
     <tr>
       <td style="border-left:1px solid #ececec;border-right:1px solid #ececec;" colspan="2">&nbsp;</td>
+    </tr>
+        <tr>
+      <td style="border-bottom:1px solid #ececec;border-left:1px solid #ececec;border-right:1px solid #ececec;padding:0 2em 2em 2em;" colspan="2" width="650" valign="top">
+        <p class="lede" style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;margin:0;">
+                  <%= Spree.t('order_mailer.confirm_email.thanks') %>
+                </p>
+        <p style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;font-weight:bold;margin:0!important;">Recharge Cartridges</p>
+      </td>
     </tr>
   </tbody>
     
