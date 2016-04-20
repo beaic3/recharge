@@ -1,45 +1,100 @@
-<table>
-  <tr>
-    <td>
-      <p class="lede">
-        <%= Spree.t('order_mailer.cancel_email.dear_customer') %>
-      </p>
-      <p>
-        <%= Spree.t('order_mailer.cancel_email.instructions') %>
-      </p>
-      <p>
-        <%= Spree.t('order_mailer.cancel_email.order_summary_canceled') %>
-      </p>
-      <table>
-        <% @order.line_items.each do |item| %>
-          <tr>
-            <td><%= item.variant.sku %></td>
-            <td>
-              <%= raw(item.variant.product.name) %>
-              <%= raw(item.variant.options_text) -%>
+<table style="font:0.8em/1.8 Arial, Helvetica, sans-serif;margin:0 auto!important; width:650px;" border="0" cellpadding="0" cellspacing="0">
+  <thead>
+      <tr>
+      <th style="background:#333333;text-align:left;padding:0.65em 2em 0.65em 2em;" width="325" cellpadding="0" cellspacing="0">
+        <a style="color:#ffffff;float:left;font-weight:normal;text-decoration:none;width:auto;" href="tel:+353214272744">Call us +353 21 4272744</a>
+      </th>
+      <th style="background:#333333;text-align:right;padding:0.65em 2em 0.65em 2em;" width="325" cellpadding="0" cellspacing="0">&nbsp;</th>
+    </tr>
+    <tr>
+      <th style="border-left:1px solid #ececec;text-align:left;padding:1.7em 2em 0.5em 2em;" width="325" cellpadding="0" cellspacing="0">
+        <a style="float:left;text-decoration:none;width:auto:" href="http://rechargecartridges.herokuapp.com/">
+          <img style="width:21.5em;" src="http://rechargecartridges.herokuapp.com/assets/store/recharge-ba10bce9a5fa3764055eb5348d943eab518eb0d5cef8fc44f071a499886ef41b.png" alt="Recharge cartridges Logo" />
+        </a>
+      </th>
+      <th style="border-right:1px solid #ececec;text-align:right;padding:1.7em 2em 0.5em 2em;" width="325" cellpadding="0" cellspacing="0">&nbsp;</th>
+    </tr>
+  </thead>
+    
+    <tbody>
+      <tr>
+      <td style="border-left:1px solid #ececec;">&nbsp;</td>
+      <td style="border-right:1px solid #ececec;">&nbsp;</td>
+    </tr>
+        <tr>
+      <td style="border-left:1px solid #ececec;border-right:1px solid #ececec;text-align:left;" cellpadding="0" cellspacing="0" colspan="2">
+        <p style="color:#ec4445;font-family:Georgia,Times New Roman,Serif;font-size:2.6em;font-style:italic;line-height:1em;margin:0;padding:0.5em 0.8em 0.5em 0.8em;text-align:center;">Your Order Has Been Canceled!</p>
+      </td>
+    </tr>
+        <tr>
+            <td style="border-left:1px solid #ececec;border-right:1px solid #ececec;padding:2em 2em 0 2em;" colspan="2" width="700" valign="top">
+                <p class="lede" style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;margin:0 0 1em 0;">
+                    <%= Spree.t('order_mailer.cancel_email.dear_customer') %>
+                </p>
+                <p style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;margin:0 0 1em 0;">
+                    <%= Spree.t('order_mailer.cancel_email.instructions') %>
+                </p>
+                <p style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;font-weight:bold;margin:2.5em 0 1em 0;">
+                    <%= Spree.t('order_mailer.cancel_email.order_summary_canceled') %>
+                </p>
+                <table style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;">
+                    <% @order.line_items.each do |item| %>
+                        <tr>
+                            <td style="color:#333333;font-size:1em;"><%= item.variant.sku %></td>
+                            <td style="color:#333333;font-size:1em;">
+                                <%= raw(item.variant.product.name) %>
+                                <%= raw(item.variant.options_text) -%>
+                            </td>
+                            <td style="color:#333333;font-size:1em;">(<%=item.quantity%>) <%= Spree.t('at_symbol') %> <%= item.single_money %> = <%= item.display_amount %></td>
+                        </tr>
+                    <% end %>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#333333;font-size:1em;">
+                          <%= Spree.t('order_mailer.cancel_email.subtotal') %>
+                        </td>
+                        <td style="color:#333333;font-size:1em;text-align:right;">
+                          <%= @order.display_item_total %>
             </td>
-            <td>(<%=item.quantity%>) <%= Spree.t('at_symbol') %> <%= item.single_money %> = <%= item.display_amount %></td>
-          </tr>
-        <% end %>
-        <tr>
-          <td></td>
-          <td><%= Spree.t('order_mailer.cancel_email.subtotal') %></td>
-          <td><%= @order.display_item_total %></td>
+                    </tr>
+                    <% @order.adjustments.eligible.each do |adjustment| %>
+                        <tr>
+                            <td style="color:#333333;font-size:1em;"><%= raw(adjustment.label) %></td>
+                            <td style="color:#333333;font-size:1em;text-align:right;"><%= adjustment.display_amount %></td>
+                        </tr>
+                    <% end %>
+                    <tr>
+                        <td style="color:#333333;font-size:1em;"><%= Spree.t('order_mailer.cancel_email.total') %></td>
+                        <td style="color:#333333;font-size:1em;text-align:right;"><%= @order.display_total %></td>
+                    </tr>
+                </table>
+            </td>
         </tr>
-        <% @order.adjustments.eligible.each do |adjustment| %>
-          <tr>
-            <td></td>
-            <td><%= raw(adjustment.label) %></td>
-            <td><%= adjustment.display_amount %></td>
-          </tr>
-        <% end %>
         <tr>
-          <td></td>
-          <td><%= Spree.t('order_mailer.cancel_email.total') %></td>
-          <td><%= @order.display_total %></td>
-        </tr>
-      </table>
-    </td>
-    <td class="expander"></td>
-  </tr>
+      <td style="border-left:1px solid #ececec;border-right:1px solid #ececec;" colspan="2">&nbsp;</td>
+    </tr>
+    
+    <tr>
+      <td style="border-left:1px solid #ececec;border-right:1px solid #ececec;" colspan="2">&nbsp;</td>
+    </tr>
+        <tr>
+      <td style="border-bottom:1px solid #ececec;border-left:1px solid #ececec;border-right:1px solid #ececec;padding:0 2em 2em 2em;" colspan="2" width="650" valign="top">
+        <p class="lede" style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;margin:0;">
+                  <%= Spree.t('order_mailer.confirm_email.thanks') %>
+                </p>
+        <p style="color:#333333;font-family:Arial, Helvetica, sans-serif;font-size:1em;font-weight:bold;margin:0!important;">Recharge Cartridges</p>
+      </td>
+    </tr>
+  </tbody>
+    
+    <tfoot>
+    <tr>
+      <td width="650" style="background:#333333;border-left:1px solid #ececec;color:#949494;font-size:0.9em;padding:1.55em 2em;" colspan="2">
+        <span>&copy; Copyright 2016 Recharge Cartridges. All Rights Reserved.</span>
+      </td>
+    </tr>
+  </tfoot>
 </table>
