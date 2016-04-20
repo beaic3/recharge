@@ -16,7 +16,11 @@ A{
 #spree-header .nav A{
     font-size:1em;
 	}
+#top-nav-bar SPAN.glyphicon-menu-hamburger{
+	display:none;
+	}
 #top-nav-bar UL{
+	display:block;
 	margin-right:0;
 	}
 	#top-nav-bar UL #search-bar{
@@ -72,3 +76,120 @@ A{
 	min-height:10.2em;
 	padding:1.1em;
 	}
+#header #search-bar SPAN.glyphicon-search{
+	display:none;
+	}
+#header #search-bar form{
+	display:block;
+	}
+#triple-top A{
+	float:left;
+    margin:0 0 0.7em;
+    width:100%;
+	}
+	#triple-top A IMG{
+		max-width:35em;
+		}
+
+/* Mobile devices */
+@media screen and (min-device-width:320px) and (max-device-width:400px){
+	#header-top{
+		min-height:4.2em;
+	    position:relative;
+	    z-index:999;
+		}
+		A.admin_section{
+			font-size:0.9em;
+    		margin:0.5em 0 0 0;
+			}
+			A.admin_section:hover{
+				color:#ec4445;
+			}
+	#spree-header #header{
+		min-height:13.8em;
+		}
+		#spree-header #logo{
+			margin:0 auto 1em auto;
+    		width:20.4em;
+			}
+		#spree-header .navbar.col-md-9{
+			padding:0;
+			position:absolute;
+	    	width:100%;
+			}
+	#top-nav-bar{
+		left:0;    
+	    min-height:1em;
+	    padding:0;
+	    position:absolute;
+	    top:-13.5em;
+	    width:100%;
+		}
+		#top-nav-bar SPAN.glyphicon-menu-hamburger{
+			background:#4f4f4f;
+		    color: #ffffff;
+		    cursor:pointer;
+		    display:block;
+		    font-size:1.5em;
+		    padding:0.9em 0.8em 0.95em 0.8em;
+		    position:relative;
+		    width:2.6em;
+		    z-index:999;
+			}
+		#top-nav-bar UL{
+			display:none;
+			background:#4f4f4f;
+		    float:left;
+		    margin:0;
+		    width:100%;
+			}
+			#top-nav-bar UL LI A{
+				background:none!important;
+			    border-top:1px solid #ffffff;
+			    color:#ffffff!important;
+			    margin:0 1em;
+				}
+				#top-nav-bar UL LI A:hover{
+				    color:#ec4445!important;
+					}
+			#top-nav-bar UL LI:first-child A{
+			    border-top:none;
+				}
+	#header #search-bar SPAN.glyphicon-search{
+		background:#333333;
+		color:#ffffff;
+		display:block;
+	    padding:1em;
+	    width:3em;
+		}
+	#header #search-bar form{
+		display:none;
+		margin:0.5em 0.1em;
+		}
+	#header .contact-button{
+		position:static;
+		}
+		#header .contact-button A.btn{
+			position:absolute;
+			right:1em;
+			top:0;
+			}
+	#footer-top LI{
+		font-size:0.8em;
+		}
+	#footer-top .foot-contact DIV{
+	   	float:left;
+	    margin-bottom:10px;
+	    width:100%;
+		}
+		#footer-top .foot-contact I{
+		    float:left;
+		    margin:0 1em 0 0;
+		    width:auto;
+			}
+		#footer-top .foot-contact P{
+		    float:left;
+		    font-size:1em;
+		    margin:0;
+			}
+}

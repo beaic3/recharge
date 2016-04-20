@@ -2,7 +2,7 @@
 	<div class="container">
 
   <div class="row">
-	 <div class="col-md-10">
+	 <div class="col-xs-offset-2 col-xs-10 col-md-offset-0 col-md-10">
   	<i class="fa fa-phone"></i>
     <% if @add.nil? %>
 		  
@@ -10,7 +10,7 @@
       Call us <%= @add.phone %>
     <% end %>
     </div>
-   <div class="col-md-2">
+   <div class="col-xs-offset-2 col-xs-10 col-md-offset-0 col-md-2">
     <% if spree_current_user %>
       <% if spree_current_user.has_spree_role?("admin") %>
         <%= link_to "Admin Control", admin_path, class: 'admin_section' %>
@@ -34,7 +34,7 @@
           <div id="search-bar" class="col-md-3" data-hook>
             <%= render :partial => 'spree/shared/search' %>
           </div>
-          <div class="col-xs-12 col-md-3">
+          <div class="col-xs-12 col-md-3 contact-button">
             <a role="button" class="btn btn-primary btn-default" href="tel:+353214272744">
               <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
               <span>Contact us <span>for more information</span>
