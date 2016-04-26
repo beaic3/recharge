@@ -95,7 +95,7 @@ A{
 @media screen and (min-device-width:320px) and (max-device-width:400px){
 	TABLE{
 		display:block;
-		overflow-x-scroll;
+		overflow-x:scroll;
 		}
 	#header-top{
 		min-height:4.2em;
