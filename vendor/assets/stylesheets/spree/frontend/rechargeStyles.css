@@ -1,9 +1,3 @@
--ms-@viewport{
-	width:device-width;
-	}
-@viewport{
-	width:device-width;
-	}
 P,
 A{
 	font-size:1.15em;
@@ -296,6 +290,12 @@ A{
 
 /* Mobile devices */
 @media screen and (min-device-width:320px) and (max-device-width:400px){
+	-ms-@viewport{
+		width:device-width;
+		}
+	@viewport{
+		width:device-width;
+		}
 	TABLE{
 		display:block;
 		overflow-x:scroll;
