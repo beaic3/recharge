@@ -1,9 +1,8 @@
-<thead>
-  <tr data-hook="cart_adjustments_headers">
-    <th class="cart-adjustment-header" colspan="6"><%= Spree.t(:order_adjustments) %></th>
-  </tr>
-</thead>
-<tbody id="cart_adjustments" data-hook>
+<div class="cart-adjustments-header" data-hook="cart_adjustments_headers">
+  <h5><%= Spree.t(:order_adjustments) %></h5>
+</div>
+
+<div id="cart_adjustments" data-hook>
   <% if @order.line_item_adjustments.exists? %>
     <% @order.line_item_adjustments.promotion.eligible.group_by(&:label).each do |label, adjustments| %>
       <%= render "spree/orders/adjustment_row", :label => label, :adjustments => adjustments, :type => Spree.t(:promotion) %>
@@ -15,15 +14,13 @@
   <% end %>
 
   <% @order.shipments.each do |shipment| %>
-    <tr>
-      <td colspan="4" align='right'><h5><%= Spree.t(:shipping) %>: <%= shipment.shipping_method.name %></h5></td>
-      <td colspan='2'>
-        <h5><%= shipment.display_discounted_cost %></h5>
-      </td>
-    </tr>
+    <div>
+      <h5><%= Spree.t(:shipping) %>: <%= shipment.shipping_method.name %></h5>
+      <h5><%= shipment.display_discounted_cost %></h5>
+    </div>
   <% end %>
 
   <% @order.adjustments.eligible.group_by(&:label).each do |label, adjustments| %>
     <%= render "spree/orders/adjustment_row", :label => label, :adjustments => adjustments, :type => Spree.t(:adjustment) %>
   <% end %>
-</tbody>
+</div>

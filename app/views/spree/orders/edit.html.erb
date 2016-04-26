@@ -10,21 +10,10 @@
   <% else %>
     <div data-hook="outside_cart_form">
       <%= form_for @order, url: update_cart_path, html: { id: 'update-cart' } do |order_form| %>
-        <div data-hook="inside_cart_form">
+        <div data-hook="inside_cart_form" class="row">
 
-          <div data-hook="cart_items" class="table-responsive">
+          <div data-hook="cart_items" class="table-responsive col-xs-12 col-md-12">
             <%= render partial: 'form', locals: { order_form: order_form } %>
-          </div>
-
-          <div class="links col-md-6 navbar-form pull-right text-right" data-hook="cart_buttons">
-            <div class="form-group">
-              <%= button_tag class: 'btn btn-primary', id: 'update-button' do %>
-                <%= Spree.t(:update) %>
-              <% end %>
-              <%= button_tag class: 'btn btn-lg btn-success', id: 'checkout-link', name: 'checkout' do %>
-                <%= Spree.t(:checkout) %>
-              <% end %>
-            </div>
           </div>
         </div>
       <% end %>

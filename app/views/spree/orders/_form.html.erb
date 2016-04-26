@@ -1,28 +1,41 @@
 <%= render partial: 'spree/shared/error_messages', locals: { target: @order } %>
-<table class="table" id="cart-detail" data-hook>
-  <thead>
-    <tr class="active" data-hook="cart_items_headers">
-      <th class="cart-item-description-header" colspan="2"><%= Spree.t(:item) %></th>
-      <th class="cart-item-price-header"><%= Spree.t(:price) %></th>
-      <th class="cart-item-quantity-header"><%= Spree.t(:qty) %></th>
-      <th class="cart-item-total-header"><%= Spree.t(:total) %></th>
-      <th class="cart-item-delete-header"></th>
-    </tr>
-  </thead>
-  <tbody id="line_items" data-hook>
-    <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
-  </tbody>
-  <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
-    <tr class="cart-subtotal">
-      <td colspan="4" align='right'><h5><%= Spree.t(:cart_subtotal, count: @order.line_items.sum(:quantity)) %></h5></td>
-      <td colspan><h5><%= order_form.object.display_item_total %></h5></td>
-      <td></td>
-    </tr>
-    <%= render "spree/orders/adjustments" %>
-  <% end %>
-  <tr class="warning cart-total">
-    <td colspan="4" align='right'><h5><%= Spree.t(:total) %></h5></td>
-    <td class="lead" colspan><%= order_form.object.display_total %></td>
-    <td></td>
-  </tr>
-</table>
+<div class="cart-detail" id="cart-detail" data-hook>
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <%= render partial: 'spree/orders/line_item', collection: order_form.object.line_items, locals: { order_form: order_form } %>
+    </div>
+    <div class="box-price col-xs-12 col-md-4">
+      <div class="content-box-price">
+        <% if @order.adjustments.nonzero.exists? || @order.line_item_adjustments.nonzero.exists? || @order.shipment_adjustments.nonzero.exists? || @order.shipments.any? %>
+          <div class="cart-subtotal col-xs-12 col-md-12">
+            <div>
+              <h5><%= Spree.t(:cart_subtotal, count: @order.line_items.sum(:quantity)) %></h5>
+            </div>
+            <div class="price">
+              <h5><%= order_form.object.display_item_total %></h5>
+            </div>
+          </div>
+          <%= render "spree/orders/adjustments" %>
+        <% end %>
+        <div class="warning cart-total col-xs-12 col-md-12">
+          <div class="total-label">
+            <h4><%= Spree.t(:total) %></h4>
+          </div>
+          <div class="total-price">
+            <h4><%= order_form.object.display_total %></h4>
+          </div>
+        </div>
+      </div>
+      <div class="links col-md-6 navbar-form pull-right text-right col-xs-12 col-md-4" data-hook="cart_buttons">
+        <div class="form-group">
+          <%= button_tag class: 'btn btn-primary', id: 'update-button' do %>
+            <%= Spree.t(:update) %>
+          <% end %>
+          <%= button_tag class: 'btn btn-lg btn-success', id: 'checkout-link', name: 'checkout' do %>
+            <%= Spree.t(:checkout) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
