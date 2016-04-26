@@ -277,6 +277,8 @@ A{
 	}
 #checkout DIV[data-hook*="checkout_content"] #checkout-summary{
 	background:#ebebeb;
+	float:left;
+	width:100%;
 	}
 	#checkout DIV[data-hook*="checkout_content"] #checkout-summary H3{
 	    background:#ffffff;
