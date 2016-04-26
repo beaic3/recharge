@@ -93,6 +93,10 @@ A{
 
 /* Mobile devices */
 @media screen and (min-device-width:320px) and (max-device-width:400px){
+	TABLE{
+		display:block;
+		overflow-x-scroll;
+		}
 	#header-top{
 		min-height:4.2em;
 	    position:relative;
@@ -174,6 +178,17 @@ A{
 			right:1em;
 			top:0;
 			}
+	#cart-detail .line-item .cart-item-image{
+		margin:0 0 1em 0;
+		text-align:center;
+		}
+	#cart-detail .line-item .cart-item-description-left{
+		margin:0 0 1em 0;
+		}
+	#cart-detail .box-price{
+		margin:0 1em;
+	    width:91.3%;
+		}
 	#footer-top LI{
 		font-size:0.8em;
 		}
