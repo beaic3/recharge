@@ -10,9 +10,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'carrierwave', '~> 0.10.0'
-gem 's3_direct_upload'
+gem 'carrierwave_direct'
 gem 'fog', '~> 1.24.0'
 gem 's3'
+gem 'sidekiq'
 
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
