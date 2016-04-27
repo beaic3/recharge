@@ -1,3 +1,3 @@
 class AvatarUploader < CarrierWave::Uploader::Base
-  #include CarrierWaveDirect::Uploader
+  include CarrierWaveDirect::Uploader
 end
