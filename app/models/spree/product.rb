@@ -24,9 +24,8 @@ module Spree
     
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks
-    
-    mount_uploader :avatar, AvatarUploader
-    
+
+
 
 
     #def search_data
