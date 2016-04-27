@@ -4,8 +4,8 @@ module Spree
     include UserMethods
     include UserPaymentSource
 
-    mount_uploader :prod_update, ProdUpdateUploader
-    
+    #mount_uploader :prod_update, ProdUpdateUploader
+
     devise :database_authenticatable, :registerable, :recoverable,
            :rememberable, :trackable, :validatable, :encryptable, :encryptor => 'authlogic_sha512'
     devise :confirmable if Spree::Auth::Config[:confirmable]
