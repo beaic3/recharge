@@ -16,10 +16,3 @@ class AvatarUploader < CarrierWave::Uploader::Base
   include CarrierWaveDirect::Uploader
 end
 
-class UploaderTest < Sinatra::Base
-  get "/" do
-    @uploader = ImageUploader.new
-    @uploader.success_action_redirect = request.url
-    haml :index
-  end
-end
