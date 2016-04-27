@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 gem 'carrierwave', '~> 0.10.0'
-
+gem 's3_direct_upload'
 gem 'fog', '~> 1.24.0'
 gem 's3'
 

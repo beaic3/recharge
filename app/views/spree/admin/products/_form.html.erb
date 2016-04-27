@@ -107,7 +107,17 @@
     <% end %>
 
 
+<script id="template-upload" type="text/x-tmpl">
+<div id="file-{%=o.unique_id%}" class="upload">
+  {%=o.name%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
 
+
+<%= s3_uploader_form callback_url: model_url, callback_param: "model[image_url]", id: "s3-uploader" do %>
+  <%= file_field_tag :file, multiple: true, data: { url: s3_uploader_url } %>
+<% end %>
 
     
 	<% end %>

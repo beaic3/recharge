@@ -228,6 +228,10 @@ GEM
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
       multi_json (~> 1.2)
+    jquery-fileupload-rails (0.4.6)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
+      sass (>= 3.2)
     jquery-rails (4.0.5)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
@@ -324,6 +328,11 @@ GEM
       railties (>= 4.2.0, < 5.1)
     s3 (0.3.24)
       proxies (~> 0.2.0)
+    s3_direct_upload (0.1.7)
+      coffee-rails (>= 3.1)
+      jquery-fileupload-rails (~> 0.4.1)
+      rails (>= 3.1)
+      sass-rails (>= 3.1)
     sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
@@ -458,6 +467,7 @@ DEPENDENCIES
   rails (= 4.2.2)
   rails_12factor
   s3
+  s3_direct_upload
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   seed_dump
