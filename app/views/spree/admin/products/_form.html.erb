@@ -106,11 +106,11 @@
       <%= f.error_message_on :spicers_account_code %>
     <% end %>
 
-
     <%= direct_upload_form_for @uploader do |f| %>
-    <%= f.file_field :prod_update %>
-    <%= f.submit %>
-    
+      <%= f.file_field :avatar %>
+      <%= f.submit %>
+    <% end %>
+  
 <% end %>
 
     
