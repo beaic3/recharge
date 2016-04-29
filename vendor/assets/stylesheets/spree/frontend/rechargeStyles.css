@@ -12,11 +12,6 @@ A{
 .row-space{
 	margin:0 0 1.35em;
 	}
-.well{
-	border:1px solid #c8cbcc;
-	border-radius:0;
-	min-height:20em;
-	}
 .admin_section,
 #spree-header .nav A{
     font-size:1em;
