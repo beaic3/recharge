@@ -16,8 +16,7 @@ module Spree
       else
         @products = Spree::Product.all
       end
-      @uploader = Spree::Product.new.avatar
-      @uploader.success_action_redirect = root_url
+
     end
 
 
