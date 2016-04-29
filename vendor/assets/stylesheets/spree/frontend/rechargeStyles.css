@@ -95,64 +95,6 @@ A{
 	#triple-top A IMG{
 		max-width:35em;
 		}
-#product-images #main-image{
-	border:none;
-	box-shadow:none;
-	}
-	#product-images #main-image .panel-body{
-		padding:0;
-		}
-.product-properties{
-    float:left;
-    margin:0 0 1em 0;
-    padding:0;
-    width:100%;
-	}
-	.product-properties .product-text-properties DIV{
-	    float:left;
-	    margin:0 0 0.3em;
-	    width:100%;
-		}
-		.product-properties .product-text-properties DIV SPAN{
-		    font-size:0.9em;
-			}
-.buy-block #cart-form #product-price{
-	margin:0 0 1em 0;
-	}
-	.buy-block #cart-form #product-price .price{
-		float:right;
-	    font-size:2em;
-	    line-height:1.1em;
-	    margin:0;
-		}
-.buy-block #cart-form .add-to-cart{
-	margin:0 0 1em 0;
-	}
-	.buy-block #cart-form .add-to-cart .input-group{
-	    float:right;
-	    width:70%;
-		}
-.buy-block .favourite-product{
-	float:right;
-	margin:0 0 1em 0;
-	padding:0;
-	width:auto;
-	}
-	.buy-block .favourite-product SPAN{
-		float:left;
-	    font-size:1.5em;
-	    margin:0 0.4em 0 0;
-	    width:auto;
-		}
-	.buy-block .favourite-product A{
-	    float:left;
-	    margin:0.3em 0;
-	    width:auto;
-		}
-#product-description .well{
-	margin:0 1em;
-    width:98%;
-	}
 #cart-detail .line-item{
 	border-bottom:1px dotted #000000;
     float:left;

@@ -1,6 +1,5 @@
 <% cache [I18n.locale, current_currency, @product, @product.possible_promotions] do %>
   <div data-hook="product_show" itemscope itemtype="https://schema.org/Product">
-    <h1 class="product-title" itemprop="name"><%= @product.name %></h1>
     <div class="col-md-4" data-hook="product_left_part">
       <div data-hook="product_left_part_wrap">
         <div id="product-images" data-hook="product_images">
@@ -45,10 +44,6 @@
           <div id="cart-form" data-hook="cart_form">
             <%= render :partial => 'cart_form' %>
           </div>
-          
-          <div class="well product-text-description col-xs-12 col-md-12" itemprop="description" data-hook="description">
-            <%= product_description(@product) rescue Spree.t(:product_has_no_description) %>
-          </div>       
         </div>
 
         <%= render :partial => 'taxons' %>
