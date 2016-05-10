@@ -216,6 +216,9 @@
 	    background:#ffffff;
 	    margin:0 0 1em 0!important;
 		}
+#footer-bottom IMG{
+    max-width:10.7em;
+	}
 
 /* Mobile devices */
 @media screen and (min-device-width:320px) and (max-device-width:400px){
