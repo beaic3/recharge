@@ -331,6 +331,9 @@
 		float:left;
 		width:100%;
 		}
+	#page_content .branch-image IMG{
+		max-width:20.8em;
+		}
 	#footer-top LI{
 		font-size:0.8em;
 		}
