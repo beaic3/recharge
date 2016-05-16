@@ -19,6 +19,7 @@ Spree.config do |config|
   allow_backorder_shipping = true
   config.company = true
   config.currency = 'EUR'
+  config.products_per_page = 50
 end
 
 Spree.user_class = "Spree::User"
