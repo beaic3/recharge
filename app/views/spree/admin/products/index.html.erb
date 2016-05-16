@@ -141,7 +141,7 @@
       <% @collection.each do |product| %>
           <tr <%== "style='color: red;'" if product.deleted? %> id="<%= spree_dom_id product %>" data-hook="admin_products_index_rows" class="<%= cycle('odd', 'even') %>">
             <td class="sku"><%= product.sku rescue '' %></td>
-            <td class="image"><%= link_to image_tag('http://ts.liveofficedata.co.uk/' + product.image_url, {:style=>'max-width:330px;'), product %></td>
+            <td class="image"><%= link_to image_tag('http://ts.liveofficedata.co.uk/' + product.image_url, {:style=>'max-width:330px;'}), product %></td>
             <td><%= link_to product.try(:name), edit_admin_product_path(product) %></td>
             <td class="text-center"><%= product.display_price.to_html rescue '' %></td>
             <td class="actions actions-3 text-right" data-hook="admin_products_index_row_actions">
