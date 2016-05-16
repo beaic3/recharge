@@ -20,6 +20,7 @@ Spree.config do |config|
   config.company = true
   config.currency = 'EUR'
   config.products_per_page = 50
+  config.admin_products_per_page = 50
 end
 
 Spree.user_class = "Spree::User"
