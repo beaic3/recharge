@@ -33,7 +33,7 @@
 			<% @products.where(sale: true).each do |e| %>
 			  <div class="col-sm-6 col-md-3">
 			    <div class="thumbnail">
-			      <%= link_to image_tag('http://ts.liveofficedata.co.uk/' + e.image_url), e %>
+			      <%= link_to image_tag('http://cdn.tradesupply.eu/images/' + e.image_url), e %>
 			      <div class="caption">
 			        <h4><%= link_to truncate(e.name, length: 80), e %></h4>
 			        <p><%= link_to e.ts_code, e %></p>
@@ -55,7 +55,7 @@
 			<% @products.where(featured: true).each do |e| %>
 			  <div class="col-sm-6 col-md-3">
 			    <div class="thumbnail">
-			      <%= link_to image_tag(http://cdn.tradesupply.eu/images/' + e.image_url), e %>
+			      <%= link_to image_tag('http://cdn.tradesupply.eu/images/' + e.image_url), e %>
 			      <div class="caption">
 			        <h4><%= link_to truncate(e.name, length: 80), e %></h4>
 			        <p><%= link_to e.ts_code, e %></p>
