@@ -142,6 +142,52 @@ h1.product-title{
 		    margin:15px auto 30px auto;
 		    width:20px;
 			}
+	#header .contact-button{
+		margin: 0 0 2em 0;
+		}
+		#header .contact-button A.btn{
+			display:block;
+			height:2.95em;
+			margin:0 auto;
+			padding:0 12px 0.05em 0;
+			width:11em;
+			}
+			#header .contact-button A.btn SPAN{
+				background:#272727;
+			    color:#ffffff;
+			    float:left;
+			    font-size:1.25em;
+			    line-height:1em;
+			    padding:0.5em 0 0.3em 0;
+			    text-transform:uppercase;
+			    width:84.6%;
+				}
+				#header .contact-button A.btn SPAN SPAN{
+					float:left;
+				    font-size:0.5em;
+				    padding:0;
+				    width:100%;
+					}
+				#header .contact-button A.btn SPAN.glyphicon{
+					background:#ffffff;
+				    border:0.3em solid #272727;
+				    border-radius:2.5em;
+				    color:#272727;
+				    float:left;
+				    font-size:1.4em;
+				    margin:-1px 0 0 -1em;
+				    padding:0.3em;
+				    width:auto;
+					}
+			#header .contact-button A.btn:hover,
+			#header .contact-button A.btn:hover SPAN{
+				background:#686868!important;
+				}
+				#header .contact-button A.btn:hover SPAN.glyphicon{
+					background:#ffffff!important;
+				    border:0.3em solid #686868;
+				    color:#686868;
+					}
 	#header .main-menu #main-nav-bar UL{
 		float:left;
 		width:100%;
@@ -606,6 +652,9 @@ footer{
 				#footer-bottom UL LI:last-child{
 					border-right:none;
 					}
+					#footer-bottom UL LI IMG{
+						max-width:12em;
+						}
 					#footer-bottom UL LI A{
 						color:#949494!important;
 						font-size:1em;
@@ -717,4 +766,3 @@ footer{
 		    width:100%;
 			}
 }
-0
