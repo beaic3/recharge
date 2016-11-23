@@ -15,34 +15,23 @@
     <%= render partial: 'spree/shared/google_analytics.js' %>
     <%= render partial: 'spree/shared/header' %>
 
-    <div class="container">
+    <div id="body-container" class="container col-xs-12 col-md-offset-3 col-md-8">
       <div class="row" data-hook>
         <% breadcrumbs(@taxon) %>
-
-        
-
         <div id="content" class="col-sm-12" data-hook>
           <%= flash_messages %>
           <%= yield %>
         </div>
 
         <%= yield :templates %>
-      </div>
+      </div>    
+      <%= render partial: 'spree/shared/footer' %>
     </div>
-    
-    <%= render partial: 'spree/shared/footer' %>
     
     <div id="toTop">
     	<a href="#header">
 			<i class="fa fa-angle-up"></i>
     	</a>
     </div>
-    
-
-    
-
-    
-    
-    
   </body>
 </html>
