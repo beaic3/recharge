@@ -30,7 +30,7 @@
           <% cache(@taxon.present? ? [I18n.locale, current_currency, @taxon, product] : [I18n.locale, current_currency, product]) do %>
             <div class="panel-body text-center product-body">
               
-              <%= link_to image_tag('http://cdn.tradesupply.eu/images/' + product.image_url), product %>
+              <%= link_to image_tag('http://ts.liveofficedata.co.uk/' + product.image_url), product %>
               <%= link_to truncate(product.name, length: 60), url, class: 'info', itemprop: "name", title: product.name %>
             </div>
             <div class="panel-footer text-center">
