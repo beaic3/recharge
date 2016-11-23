@@ -6,8 +6,10 @@
 <%= canonical_tag(current_store.url) %>
 <%= favicon_link_tag 'favicon.ico' %>
 <%= stylesheet_link_tag 'spree/frontend/all', media: 'screen' %>
+<%= stylesheet_link_tag 'spree/frontend/bxslider', media: 'screen' %>
 <%= csrf_meta_tags %>
 <%= javascript_include_tag 'spree/frontend/all' %>
+<%= javascript_include_tag 'spree/frontend/bxslider.min' %>
 <!--[if lt IE 9]>
   <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
 <![endif]-->
@@ -34,15 +36,18 @@
 		});
 
 		// User menu
-		$("#top-nav-bar ul").before('<span class="glyphicon glyphicon-menu-hamburger"></span>');
-		$("#top-nav-bar span").click(function(){
+		$("#header span.glyphicon.glyphicon-menu-hamburger").click(function(){
 			//slide up all the link lists
 			$("#top-nav-bar ul").slideUp();
-			$(this).css("color", "#ffffff");
+			$("#header #top-nav-bar span.glyphicon.glyphicons-remove").removeClass("glyphicon-remove");
+			$("#header #top-nav-bar span.glyphicon").addClass("glyphicon-menu-hamburger");
+			$("#header #top-nav-bar span.glyphicon-menu-hamburger").css("color", "#ffffff");
 			//slide down the link list below the h3 clicked - only if its closed
 			if(!$(this).next().is(":visible")){
 				$(this).next().slideDown();
-				$(this).css("color", "#ec4445");
+				$("#header #top-nav-bar span.glyphicon.glyphicon-menu-hamburger").removeClass("glyphicon-menu-hamburger");
+				$("#header #top-nav-bar span.glyphicon").addClass("glyphicon-remove");
+				$("#header #top-nav-bar span.glyphicon.glyphicon-remove").css("color", "#272727");
 			}
 		});
 
@@ -57,6 +62,16 @@
 				$(this).next().slideDown();
 				$(this).css("color", "#ec4445");
 			}
+		});
+
+		// Products home slider
+		$('.bxslider').bxSlider({
+			auto: true,
+			autoHover: true,
+			controls: false,
+			pager: false,
+		  	mode: 'vertical',
+		  	slideMargin: 5
 		});
 	});
 </script>
