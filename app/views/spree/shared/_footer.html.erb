@@ -1,110 +1,104 @@
 <footer>
-	
-	<div id="footer-top">
-		<div class="container">
-			
-			<div class="row">
-				<div class="col-md-3 logo-gone">
-					<%= image_tag("logo-grey.png", class: 'greyLogo') %>
+	<div id="footer-top">			
+		<div class="row">
+			<!--<div class="col-xs-12 col-md-12 search-box">
+				<%= render :partial => 'spree/shared/search' %>
+			</div> -->
+			<div class="col-xs-12 col-md-6">
+				<h3>Information</h3>
+				<nav id="footer-pages">
+					<ul>
+						<%= render partial: 'spree/static_content/static_content_list', collection: Spree::Page.by_store(current_store).visible.footer_links, as: :page %>
+					</ul>
+				</nav>
+			</div>
+			<div class="col-xs-12 col-md-6 foot-contact">
+				<h3>Contact</h3>
+				<div>
+					<i class="fa fa-map-marker">					
+					<% if @add.nil? %>
+
+				    <% else %>
+				      <p><%= @add.address %></p>
+				    <% end %>
 					
 				</div>
-				<div class="col-md-3">
-					<h3>Information</h3>
-					<nav id="footer-pages">
-						<ul><%= render partial: 'spree/static_content/static_content_list', collection: Spree::Page.by_store(current_store).visible.footer_links, as: :page %></ul>
-					</nav>
+				<div>
+					<i class="fa fa-phone">
+					<% if @add.nil? %>
+
+				    <% else %>
+				      <p><%= @add.phone %></p>
+				    <% end %>
+					
 				</div>
-				<div class="col-md-3 foot-contact">
-					<h3>Contact</h3>
-					<div>
-						<i class="fa fa-map-marker">					
-						<% if @add.nil? %>
-		  
-					    <% else %>
-					      <p><%= @add.address %></p>
-					    <% end %>
-						
-					</div>
-					<div>
-						<i class="fa fa-phone">
-						<% if @add.nil? %>
-		  
-					    <% else %>
-					      <p><%= @add.phone %></p>
-					    <% end %>
-						
-					</div>
-					<div>
-						<i class="fa fa-envelope-o">
-						<p>
-						<a class="footer-mail" href="mailto:<% if @add.nil?%><% else %><%= @add.email %><% end %>?Subject=Sales" target="_top"><% if @add.nil?%><% else %><%= @add.email %><% end %></a>
-						</p>
-					</div>
-				</div>
-				<div class="col-md-3 newsletter">
-					<h3>Newsletter</h3>
+				<div>
+					<i class="fa fa-envelope">
 					<p>
-						Subscribe to the Stationery Store mailing list to receive updates on new arrivals, special offers and other discount information.
+						<a class="footer-mail" href="mailto:<% if @add.nil?%><% else %><%= @add.email %><% end %>?Subject=Sales" target="_top"><% if @add.nil?%><% else %><%= @add.email %><% end %>
+						</a>
 					</p>
-					<form id="contact_newsletter" class="form-horizontal">
-						<fieldset id="fieldNewsletter">						
-							<div> 
-								<input id="email-newsletter" name="email-newsletter" type="email" value="" placeholder="Enter your e-mail..." required="">
-							</div>
- 
-							<div class="button">
-								<input id="submit" type="submit" value="Submit">
-							</div>
-						</fieldset>
-					</form><br>
-
-					<div class="social">
-						<ul>
-							<li>
-								<a title="facebook" href="<% if @add.nil?%><% else %><%= @add.facebook %><% end %>" target="_blank">
-									<i class="fa fa-facebook"></i>
-								</a>
-							</li>
-
-							<li>	
-								<a title="twitter" href="<% if @add.nil?%><% else %><%= @add.twitter %><% end %>" target="_blank">
-									<i class="fa fa-twitter"></i>
-								</a>
-							</li>
-
-							<li>	
-								<a title="linkedin" href="<% if @add.nil?%><% else %><%= @add.linkedin %><% end %>" target="_blank">
-									<i class="fa fa-linkedin"></i>
-								</a>
-							</li>
-						</ul>
-					</div>
 				</div>
-			</div>
-			
-			
-			
+			</div>		
 		</div>
 	</div>
-	
+
 	<div id="footer-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-9 col-md-10">
-					<img src="https://s3-eu-west-1.amazonaws.com/recharge-cartridges/images/poweredFooter-icon.png" alt="Powered by 39bots">
-				</div>
-				<div class="col-xs-3 col-md-2">
-					<%= link_to "Version.b1", admin_path, class: 'version' %>
-				</div>
-			</div>
-
-			<% if spree_current_user %>
-      			<% if spree_current_user.has_spree_role?("super") %>
-        			<%= link_to "Admin super", admin_path, class: 'admin_section' %>
-      			<% end %>
-    		<% end %>
-		
+		<div class="row">
+			<ul>
+				<li><img src="https://s3-eu-west-1.amazonaws.com/recharge-cartridges/images/poweredFooter-icon.png" alt="Powered by 39bots"></li>
+				<li><%= link_to "Version.b1", admin_path, class: 'version' %></li>
+			</ul>
 		</div>
+
+		<% if spree_current_user %>
+  			<% if spree_current_user.has_spree_role?("super") %>
+    			<%= link_to "Admin super", admin_path, class: 'admin_section' %>
+  			<% end %>
+		<% end %>		
 	</div>
 	
+	<!--
+	<div id="footer-bottom">
+		<div class="col-md-3 newsletter">
+			<h3>Newsletter</h3>
+			<p>
+				Subscribe to the Stationery Store mailing list to receive updates on new arrivals, special offers and other discount information.
+			</p>
+			<form id="contact_newsletter" class="form-horizontal">
+				<fieldset id="fieldNewsletter">						
+					<div> 
+						<input id="email-newsletter" name="email-newsletter" type="email" value="" placeholder="Enter your e-mail..." required="">
+					</div>
+
+					<div class="button">
+						<input id="submit" type="submit" value="Submit">
+					</div>
+				</fieldset>
+			</form><br>
+
+			<div class="social">
+				<ul>
+					<li>
+						<a title="facebook" href="<% if @add.nil?%><% else %><%= @add.facebook %><% end %>" target="_blank">
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+
+					<li>	
+						<a title="twitter" href="<% if @add.nil?%><% else %><%= @add.twitter %><% end %>" target="_blank">
+							<i class="fa fa-twitter"></i>
+						</a>
+					</li>
+
+					<li>	
+						<a title="linkedin" href="<% if @add.nil?%><% else %><%= @add.linkedin %><% end %>" target="_blank">
+							<i class="fa fa-linkedin"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	-->
 </footer>
