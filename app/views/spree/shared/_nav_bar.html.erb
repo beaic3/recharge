@@ -1,7 +1,15 @@
-<nav class="navbar col-md-5" id="top-nav-bar">
-  <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
-    <li id="search-bar" data-hook>
+<nav id="top-nav-bar" class="navbar">
+  <span class="glyphicon glyphicon-menu-hamburger"></span>
+  <ul id="nav-bar" class="nav navbar-nav" style="display:none;" data-hook>
+  	<li id="search-bar" data-hook>
       <%= render :partial => 'spree/shared/search' %>
+    </li>
+    <li id="admin-panel-link" data-hook>
+    	<% if spree_current_user %>
+	      <% if spree_current_user.has_spree_role?("admin") %>
+	        <%= link_to "Admin Control", admin_path, class: 'admin_section' %>
+	      <% end %>
+	    <% end %>      
     </li>
   </ul>
 </nav>
