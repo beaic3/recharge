@@ -24,15 +24,14 @@
 <% else %>
 
   <% @products.each do |product| %>
-    <div style="border: 1px groove #999; border-radius: 5px;" class="row">
+    <div class="row product-item">
       <div class="col-md-3">
-         <%= image_tag('http://cdn.tradesupply.eu/images/' + product.image_url, class: 'target_image') %>
-        </div>
+          <%= image_tag('http://ts.liveofficedata.co.uk/' + product.image_url, class: 'target_image') %>
+      </div>
 
       <div class="col-md-5">
         <h3><%= link_to product.name.gsub(/(#{@query})/i, '<span class="red">\1</span>').html_safe, product %></h3>
         <p>€<%= product.price %></p>
-        <p><%= link_to "Buy", product, class: 'btn btn-primary' %></p>
       </div>
       <div class="col-md-4">
         <h3>Machine Fits</h3>
